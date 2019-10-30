@@ -1,0 +1,1 @@
+<a href="https://cockpit.oclock.io/dashboard"><img id="logo" src="../images/onews.svg" alt="Logo O'clock"></a>

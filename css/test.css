@@ -1,0 +1,41 @@
+.parent {
+    height: 100vh;
+    width: 100vw;
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*align-items: flex-end;*/
+}
+
+.enfant {
+    width: 25%;
+    height: 15%;
+    border: 5px solid black;
+}
+
+#un {
+    background-color: yellow;
+}
+
+#deux {
+    background-color: green;
+    /*align-self: center;*/
+    
+}
+
+#trois {
+    background-color: blue;
+}
+
+#quatre {
+    background-color: red;
+}
+
+#cinq {
+    background-color: pink;
+}
+
+#six {
+    background-color: lightblue;
+}
