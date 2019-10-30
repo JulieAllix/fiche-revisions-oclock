@@ -58,18 +58,18 @@
                     <h3>Fonctions utiles</h3>
 
                         <ul>
-                            <li><em class="gras">alert(message)</em>affiche une pop-up avec un message et un bouton OK </li>
-                            <li><em class="gras">prompt()</em>affiche une pop-up / boîte de dialogue permettant à l'utilisateur de saisir une valeur, avec un bouton OK pour valider, et possibliité d'Annuler</li>
-                            <li><em class="gras">confirm()</em></li>
+                            <li><em class="gras">alert(message)</em> affiche une pop-up avec un message et un bouton OK </li>
+                            <li><em class="gras">prompt()</em> affiche une pop-up / boîte de dialogue permettant à l'utilisateur de saisir une valeur, avec un bouton OK pour valider, et possibliité d'Annuler</li>
+                            <li><em class="gras">confirm()</em> affiche une boîte de dialogue permettant à l'utilisateur de choisir entre Annuler et OK</li>
                             <li><em class="gras">console.log()</em> affiche un message dans la console</li>
-                            <li><em class="gras">console.info()</em></li>
-                            <li><em class="gras">console.warn()</em></li>
-                            <li><em class="gras">console.error()</em></li>
-                            <li><em class="gras">Number(string)</em></li>
-                            <li><em class="gras">parseInt(string)</em></li>
-                            <li><em class="gras">.length</em></li>
-                            <li><em class="gras">.indexOf()</em></li>
-                            <li><em class="gras">.lastIndexOf()</em></li>
+                            <li><em class="gras">console.info()</em> alias de console.log()</li>
+                            <li><em class="gras">console.warn()</em> affiche un message d'avertissement (jaune avec icône) dans la console</li>
+                            <li><em class="gras">console.error()</em> affiche un message d'erreur (rouge avec icône d'erreur) dans la console</li>
+                            <li><em class="gras">Number(string)</em> transforme une chaîne de caractère en nombre</li>
+                            <li><em class="gras">parseInt(string)</em> ransforme une chaîne de caractère en nombre (comme Number()), mais en plus, est capable de rechercher les chiffres en début de texte pour les transformer en nombre (ex : parseInt('3 pommes') => 3)</li>
+                            <li><em class="gras">.length</em> Permet de recupérer la longueur d'une chaîne de caractères, ou le nb d'éléments d'un tableau</li>
+                            <li><em class="gras">.indexOf()</em> Permet de récupérer le premier index d'un élément dans une chaîne de caractères + Permet de recupérer l'index de la position de la première occurence d'un élément dans un tableau</li>
+                            <li><em class="gras">.lastIndexOf()</em> Permet de récupérer l'index de la position de la dernière occurence d'un élément dans une chaîne de caractères</li>
                             <li><em class="gras">Math.random()</em> génère un nombre aléatoire entre 0 et 1</li>
                             <li><em class="gras">Math.round()</em> arrondit un nombre à l'entier le plus proche</li>
                             <li><em class="gras">Math.floor()</em> arrondit un nombre à l'entier inférieur</li>
