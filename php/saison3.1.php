@@ -96,10 +96,34 @@
 
                 <h2>Les boucles</h2>
 
+                    <h3>Bon à savoir</h3>
+
+                        <ul>
+                            <li>Il est possible d'interrompre une boucle avec l'instruction <em class="gras">break;</em></li>
+                            <li>Il est possible d'interrompre l'itération courante et de passer à la suivante avec l'instruction <em class="gras">continue;</em></li>
+                        </ul>
+
+                    <h3>Exemple de boucle while</h3>
+                        <p>while(condition) {</p>
+                        <p>// ... instructions</p>
+                        <p>}</p>
                     <h3>Exemple de boucle do...while</h3>
                         <p>do {</p>
                         <p>// ... instructions</p>
                         <p>} while(condition)</p>
+                    <h3>Exemple de boucle for</h3>
+                        <p>for(var i = 0; i < 3; i++) {</p>
+                        <p>// ... instructions</p>
+                        <p>}</p>
+                    <h3>Exemple de boucle for...in</h3>
+                        <p>var fruit = {</p>
+                        <p>nom: 'fraise',</p>
+                        <p>couleur: 'rouge'</p>
+                        <p>};</p>
+                        <p>for(var propriete in fruit) {</p>
+                        <p>console.log('Propriété ' + propriete + ' :');</p>
+                        <p>console.log('Le fruit est ' + fruit[propriete]);</p>
+                        <p>}</p>
                     
             </article>
 
