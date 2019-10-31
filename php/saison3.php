@@ -22,6 +22,9 @@
                     <h3>Bon à savoir</h3>
 
                         <ul>
+                            <li>On définit une fonction par <em class="gras">function functionName(paramètre) {}</em></li>
+                            <li>Le <em class="gras">camelCase</em> est la convention de nommage la plus en vogue pour les variables JS</li>
+                            <li>On déclare une variable par <em class="gras">var variableName = X;</em></li>
                             <li><em class="gras"></em></li>
                         </ul>
 
@@ -40,7 +43,7 @@
                     <h3>Bon à savoir</h3>
 
                         <ul>
-                            <li><em class="gras"></em></li>
+                            <li>Voici un exemple de tableau JS <em class="gras">var fruits = ["cerise", "banane", "kiwi"];</em></li>
                         </ul>
 
             </article> 
