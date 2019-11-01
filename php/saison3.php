@@ -154,9 +154,9 @@
                             <li><em class="gras">.style</em> Permet de modifier l'attribut style d'un élément</li>
                             <li><em class="gras">.classList</em> Retourne la liste des classes (attribut class="...")</li>
                             <li><em class="gras">.value</em> Permet de récupérer le contenu de l'attribut value d'un élément HTML (input par exemple)</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li><em class="gras">.id</em> permet d'attribuer un id à un élément</li>
+                            <li><em class="gras">.innerText</em> Permet d'ajouter du texte dans un élément</li>
+                            <li><em class="gras">.onclick</em> Permet de lancer une action au moment où l'utilisateur clique sur un bouton. Si cette action est le lancement d'une fonction, on donne le nom de la fonction sans parenthèses</li>
                         </ul>
     
                 </article>
