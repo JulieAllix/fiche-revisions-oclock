@@ -25,7 +25,8 @@
                             <li>On définit une fonction par <em class="gras">function functionName(paramètre) {}</em></li>
                             <li>Le <em class="gras">camelCase</em> est la convention de nommage la plus en vogue pour les variables JS</li>
                             <li>On déclare une variable par <em class="gras">var variableName = X;</em></li>
-                            <li><em class="gras"></em></li>
+                            <li>Le mot-clé <em class="gras">typeof</em> permet de vérifier le type d'une variable (ie. de son contenu)</li>
+                            <li>La concaténation s'effectue en js avec l'opérateur <em class="gras">+</em></li>
                         </ul>
 
                     <h3>Fonctions</h3>
@@ -44,6 +45,8 @@
 
                         <ul>
                             <li>Voici un exemple de tableau JS <em class="gras">var fruits = ["cerise", "banane", "kiwi"];</em></li>
+                            <li>Voici un exemple de tableau associatif JS <em class="gras">var fruits = {superbon : "cerise", sucre : "banane"};</em></li>
+                            <li>En JS, on accède aux éléments d'un objet avec la notation<em class="gras">fruits["key"] ou fruits.key</em></li>
                         </ul>
 
             </article> 
@@ -51,12 +54,6 @@
             <article class="topic" id="CSS">
 
                 <h2>Les fonctions</h2>
-
-                    <h3>Bon à savoir</h3>
-
-                        <ul>
-                            <li><em class="gras"></em></li>
-                        </ul>
                     
                     <h3>Fonctions utiles</h3>
 
