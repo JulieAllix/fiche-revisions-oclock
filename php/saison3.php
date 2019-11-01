@@ -130,6 +130,52 @@
                     
             </article>
 
+            <article class="topic" id="general">
+
+                <h2>DOM</h2>
+
+                    <h3>Bon à savoir</h3>
+
+                        <ul>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>Méthodes</h3>
+
+                        <ul>
+                            <li><em class="gras">alert()</em> Affiche une pop up avec message + les boutons ok et annuler  </li>
+                            <li><em class="gras">prompt()</em> Affiche une pop up / boîte de dialogue qui permet à l'utilisateur de saisir une vale</li>
+                            <li><em class="gras">confirm()</em> Affiche une boîte de dialogue qui permet à l'utilisateur de choisir entre annuler et ok</li>
+                            <li><em class="gras">setTimeout()</em> Exécute une fonction après un certain temps (en millisecondes)</li>
+                            <li><em class="gras">clearTimeout()</em> Annule un timer déclaré par setTimeout</li>
+                            <li><em class="gras">setInterval()</em> Exécute une fonction à un certain interval de temps (en millisecondes)</li>
+                            <li><em class="gras">clearInterval()</em> Annule un timer déclaré par setInterval</li>
+                            <li><em class="gras">getElementById()</em> Récupération d'un élément du DOM</li>
+                            <li><em class="gras">createElement()</em> Création élément du DOM</li>
+                            <li><em class="gras">querySelector()</em> Permet de récupérer le premier élément correspondant à la syntaxe transmise ( à l'image des selector CSS )</li>
+                            <li><em class="gras">appendChild()</em> Ajout d'un élément (enfant) à un noeud parent</li>
+                            <li><em class="gras">focus()</em> Applique le focus sur un élément HTML</li>
+                            <li><em class="gras">blur()</em> Retire le focus d'un élément HTML</li>
+                        </ul>
+                    
+                    <h3>Propriétés</h3>
+
+                        <ul>
+                            <li><em class="gras">.innerHTML</em> Permet d'ajouter du HTML dans un élément, le code HTML sera interprété</li>
+                            <li><em class="gras">.textContent</em> Permet d'ajouter du texte dans un élément</li>
+                            <li><em class="gras">.style</em> Permet de modifier l'attribut style d'un élément</li>
+                            <li><em class="gras">.classList</em> Retourne la liste des classes (attribut class="...")</li>
+                            <li><em class="gras">.value</em> Permet de récupérer le contenu de l'attribut value d'un élément HTML (input par exemple)</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+    
+                </article>
+
         </section>
 
     </main>
