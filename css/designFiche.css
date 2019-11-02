@@ -15,16 +15,17 @@
 }
 }
 
+
 /* Mise en page globale */
 
 html {
-    font-size: 16px;
+    font-size: 1em;
     font-family: 'Roboto', sans-serif;
     text-align: justify;
 }
 
 body {
-    background-image: url("../images/blue-yellow.jpg") 
+    background-image: url("../images/blue-yellow.jpg");
 }
 
 #logo {
@@ -166,3 +167,160 @@ li {
     color: rgb(255, 92, 51);
     margin: 1em;
 }
+
+
+/* Responsive Web Design */
+
+
+@media (max-width: 600px) {
+
+    #logo {
+        display: none;
+    }
+
+    #wrapper {
+        display: block;
+    }
+
+    #first-section, #second-section {
+        width:100%;
+    }
+
+    #navigation {
+        width:90%;
+    }
+
+/* Modification des polices */
+
+    html {
+        font-size: .8em;
+    }
+
+    h1 {
+        font-size: 1.9em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    .additional-info {
+        font-size: .7em;
+    }
+    
+    .list-level-two {
+        font-size: .7em;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    #logo {
+        display: none;
+    }
+
+    #wrapper {
+        display: block;
+    }
+
+    #first-section, #second-section {
+        width:100%;
+    }
+
+    #navigation {
+        width:70%;
+    }
+
+/* Modification des polices */
+
+    html {
+        font-size: .8em;
+    }
+
+    h1 {
+        font-size: 1.9em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    .additional-info {
+        font-size: .7em;
+    }
+    
+    .list-level-two {
+        font-size: .7em;
+    }
+
+
+}
+
+@media (max-width: 1000px) {
+
+    #logo {
+        display: none;
+    }
+
+    #wrapper {
+        display: block;
+    }
+
+    #first-section, #second-section {
+        width:100%;
+    }
+
+    #navigation {
+        width:50%;
+    }
+
+/* Modification des polices */
+
+    html {
+        font-size: .8em;
+    }
+
+    h1 {
+        font-size: 1.9em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    .additional-info {
+        font-size: .7em;
+    }
+    
+    .list-level-two {
+        font-size: .7em;
+    }
+
+
+}
+
