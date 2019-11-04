@@ -75,6 +75,30 @@
                         </ul>
 
             </article> 
+
+            <article class="topic" id="CSS">
+
+                <h2>Les événements</h2>
+
+                    <h3>Bon à savoir</h3>
+
+                        <ul>
+                            <li><em class="gras">addEventListener</em> Permet de créer un écouteur d'événement, c'est-à-dire une fonction qui va permettre d'indiquer au navigateur comment réagir à des événements futurs d'un certain type. </li>
+                            <p><em class="gras">Exemple</em></p>
+                            <p>element.addEventListener(</p>
+                            <p>eventType,</p>
+                            <p>handler</p>
+                            <p>)</p>
+                            <aside class="additional-info"><p>element est une référence vers un nœud du DOM, obtenue auparavant;</p></aside>
+                            <aside class="additional-info"><p>eventType est une chaîne de caractère décrivant le type d'événement à surveiller, sur element;</p></aside>
+                            <aside class="additional-info"><p>handler est une fonction anonyme (function() { … }) ou une référence de fonction (le nom d'une fonction existante).</p></aside>
+                            </li>
+                            <li><em class="gras">event.preventDefault()</em> permet, lorsque c'est utile, de bloquer le comportement par défaut du navigateur</li>
+                            <li><em class="gras">new Event('montype')</em> permet de créer un type d'événement</li>
+                            <li>Pour retirer un écouteur d'événement d'un élément HTML, il faut préciser l'élément en question, le type d'événement et le handler, ex: <em class="gras">bouton.removeEventListener('click', cliqueBouton)</em></li>
+                        </ul>
+
+            </article> 
         
         </section>
 
