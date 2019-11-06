@@ -181,6 +181,11 @@
                             <li><em class="gras">.id</em> permet d'attribuer un id à un élément</li>
                             <li><em class="gras">.innerText</em> Permet d'ajouter du texte dans un élément</li>
                             <li><em class="gras">.onclick</em> Permet de lancer une action au moment où l'utilisateur clique sur un bouton. Si cette action est le lancement d'une fonction, on donne le nom de la fonction sans parenthèses</li>
+                            <li><em class="gras">.target</em> Permet de sélectionner la cible d'un event</li>
+                            <li><em class="gras">.className</em> Remplace les classes déjà existantes</li>
+                            <li><em class="gras">.classList</em> Permet de gérer une liste de classes</li>
+                            <li><em class="gras">.classList.add</em> Permet d'ajouter une classe</li>
+                            <li><em class="gras">.classList.remove</em> Permet de retirer une classe</li>
                         </ul>
     
                 </article>

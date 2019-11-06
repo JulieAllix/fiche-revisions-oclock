@@ -33,6 +33,7 @@
                             <li>Raccourci pour incrémenter une variable :<em class="gras">$variable++;</em> (on peut aussi décrémenter avec --)</li>
                             <li><em class="gras">$variable += 5;</em> permet d'incrémenter la variable de 5. Fonctionne avec tous les opérateurs (-= += *= /= .=)</li>
                             <li><em class="gras">La boucle Foreach</em> permet de parcourir les tableaux</li>
+                            <li>Php utilise le principe du <em class="gras">stateless</em> : entre deux appels au serveur, rien n'est gardé en mémoire</li>
                         </ul>
 
                     <h3>Fonctions</h3>
@@ -49,6 +50,7 @@
                         <li><em class="gras">condition ? valeur si vrai : valeur si faux</em> opérateur ternaire</li>
                         <li><em class="gras">strlen</em> retourne la longueur d'une string</li>
                         <li><em class="gras">mail($to, $subject, $message);</em> envoie un e-mail</li>
+                        <li><em class="gras">header('location:urlDeLaPage')</em> permet de rediriger vers une autre page</li>
                     </ul>
 
                     <h3>Méthodes</h3>
@@ -136,7 +138,7 @@
                         <p>< li>< ?= $rooms[$i]; ?>< /li></p>
                         <p>< ?php endfor; ?></p>
 
-                    <h3>Exemple de boucle foreach</h3>
+                    <h3>Exemples de boucles foreach</h3>
                         <p>/!\ Retirer les espaces dans les chevrons</p>
                         <p>.</p>
                         <p>< ?php foreach ($tarifsAvecLibelles as $libelle => $tarif): ?>
@@ -144,6 +146,12 @@
                         <p>< ?php endforeach; ?></p>
                         <p>.</p>
                         <p>Dans cet exemple, la boucle permet d'afficher tous les éléments d'un tableau.</p>
+                        <p>.</p>
+                        <p>< ?php foreach ($kiemtaos as $kiemtao): ?>
+                        <p>< li> e-mail : < ?= kiemtao['email'] ?> < /li></p>
+                        <p>< ?php endforeach; ?></p>
+                        <p>.</p>
+                        <p>Dans cet exemple, on n'a besoin que d'un élément du tableau associatif.</p>
 
             </article>
 
