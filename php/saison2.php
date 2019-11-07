@@ -41,6 +41,7 @@
                     <ul>
                         <li><em class="gras">echo "X"</em> permet d'afficher un élément X</li>
                         <li><em class="gras">require (ou include) "nom-du-fichier.php"</em> permet d'inclure un lien vers un fichier php séparé. Privilégier require. <aside class="additional-info"><p>NB : include_once et require_once permettent de s'assurer que le fichier n'a pas déjà été inclus.</p></aside></li>
+                        <li><em class="gras">__DIR__</em> est un chemin absolu, il donne le chemin complet</li>
                         <li><em class="gras">number_format($X, n)</em> permet de formater un nombre pour l'affichage. Dans cet exemple, $X est une variable, et n indique le nombre de chiffres voulus après la décimale.</li>
                         <li><em class="gras">date('d-m-Y')</em> permet d'afficher la date du jour</li>
                         <li><em class="gras">count($variable)</em> permet de compter le nombre d'éléments dans un tableau</li>

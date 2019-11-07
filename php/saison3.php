@@ -190,6 +190,40 @@
     
                 </article>
 
+                <article class="topic" id="general">
+
+                    <h2>Les cookies & sessions (PHP)</h2>
+
+                        <h3>Les cookies</h3>
+
+                            <ul>
+                                <li>Dans l'onglet "<em class="gras">Applications</em>" du panneau pour développeur de Chrome (inspecteur d'éléments), on peut voir les cookies stockés pour chaque domaine.</li>
+                                <li><em class="gras">if(array-key-exists($userName, $users)</em> permet de checker si $userName existe dans l'array $users</li>
+                                <li><em class="gras">password-verify(($password, $encryptedPassword))</em> permet de vérifier si $password correspond à $encryptedPassword (en hachant $password, qui n'est pas encore haché contrairement à $encryptedPassword)</li>
+                                <li><em class="gras"></em></li>
+                                <li><em class="gras"></em></li>
+                                <li><em class="gras"></em></li>
+                                <li><em class="gras"></em></li>
+                            </ul>
+
+                        <h3>Les sessions</h3>
+
+                            <ul>
+                                <li><em class="gras">session_start();</em> permet d'activer les sessions
+                                <aside class="additional-info"><p>Afin d'éviter des conflits en cas de session déjà ouverte, on s'assurera que session_id() est bien vide, via empty(session_id()) ou équivalent, une session non démarrée entrainant session_id = "" (chaine vide.</p></aside></li>
+                                <li><em class="gras">session_start()</em> génère un ID complexe (ou le récupère depuis les cookies), puis il génère un fichier qui porte ce nom, et dont le contenu sera accessible avec la globale $_SESSION</li>
+                                <li>La globale <em class="gras">$_SESSION</em> est un tableau dans lequel on va pouvoir stocker puis accéder à des informations.</li>
+                                <li>On peut supprimer les données stockées dans $_SESSION avec la fonction <em class="gras">session_unset</em></li>
+                                <li><em class="gras">unset($_SESSION['userName'])</em> permet de supprimer l'entrée 'username' de l'array</li>
+                                <li><em class="gras">password_hash()</em> crée un hachage</li>
+                                <li><em class="gras"></em></li>
+                                <li><em class="gras"></em></li>
+                            </ul>
+    
+
+
+</article>
+
         </section>
 
     </main>
