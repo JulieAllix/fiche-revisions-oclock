@@ -146,7 +146,7 @@
                     <h3>Bon à savoir</h3>
 
                         <ul>
-                            <li><em class="gras"></em></li>
+                            <li><em class="gras">input.value = "";</em> permet de vider un champ</li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
@@ -162,17 +162,17 @@
                             <li><em class="gras">clearTimeout()</em> Annule un timer déclaré par setTimeout</li>
                             <li><em class="gras">setInterval()</em> Exécute une fonction à un certain interval de temps (en millisecondes)</li>
                             <li><em class="gras">clearInterval()</em> Annule un timer déclaré par setInterval</li>
-                            <li><em class="gras">getElementById()</em> Récupération d'un élément du DOM</li>
-                            <li><em class="gras">createElement()</em> Création élément du DOM</li>
-                            <li><em class="gras">querySelector()</em> Permet de récupérer le premier élément correspondant à la syntaxe transmise ( à l'image des selector CSS )</li>
-                            <li><em class="gras">appendChild()</em> Ajout d'un élément (enfant) à un noeud parent</li>
-                            <li><em class="gras">focus()</em> Applique le focus sur un élément HTML</li>
-                            <li><em class="gras">blur()</em> Retire le focus d'un élément HTML</li>
                         </ul>
                     
                     <h3>Propriétés</h3>
 
                         <ul>
+                            <li><em class="gras">.getElementById()</em> Récupération d'un élément du DOM</li>
+                            <li><em class="gras">.createElement()</em> Création élément du DOM</li>
+                            <li><em class="gras">.querySelector()</em> Permet de récupérer le premier élément correspondant à la syntaxe transmise ( à l'image des selector CSS )</li>
+                            <li><em class="gras">.querySelectorAll()</em> Permet de récupérer tous les éléments correspondant à la syntaxe transmise</li>
+                            <li><em class="gras">.forEach(function(element){})</em> permet d'appliquer une fonction à tous les éléments correspondants à une variable (qu'on aura notamment pu récupérer via la propriété querySelectorAll())</li>
+                            <li><em class="gras">.appendChild()</em> Ajout d'un élément (enfant) à un noeud parent</li>
                             <li><em class="gras">.innerHTML</em> Permet d'ajouter du HTML dans un élément, le code HTML sera interprété</li>
                             <li><em class="gras">.textContent</em> Permet d'ajouter du texte dans un élément</li>
                             <li><em class="gras">.style</em> Permet de modifier l'attribut style d'un élément</li>
@@ -186,6 +186,8 @@
                             <li><em class="gras">.classList</em> Permet de gérer une liste de classes</li>
                             <li><em class="gras">.classList.add</em> Permet d'ajouter une classe</li>
                             <li><em class="gras">.classList.remove</em> Permet de retirer une classe</li>
+                            <li><em class="gras">.focus()</em> Applique le focus sur un élément HTML</li>
+                            <li><em class="gras">.blur()</em> Retire le focus d'un élément HTML</li>
                         </ul>
     
                 </article>
