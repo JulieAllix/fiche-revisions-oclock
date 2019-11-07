@@ -200,8 +200,8 @@
 
                             <ul>
                                 <li>Dans l'onglet "<em class="gras">Applications</em>" du panneau pour développeur de Chrome (inspecteur d'éléments), on peut voir les cookies stockés pour chaque domaine.</li>
-                                <li><em class="gras">if(array-key-exists($userName, $users)</em> permet de checker si $userName existe dans l'array $users</li>
-                                <li><em class="gras">password-verify(($password, $encryptedPassword))</em> permet de vérifier si $password correspond à $encryptedPassword (en hachant $password, qui n'est pas encore haché contrairement à $encryptedPassword)</li>
+                                <li><em class="gras">if(array_key_exists($userName, $users)</em> permet de checker si $userName existe dans l'array $users</li>
+                                <li><em class="gras">password_verify(($password, $encryptedPassword))</em> permet de vérifier si $password correspond à $encryptedPassword (en hachant $password, qui n'est pas encore haché contrairement à $encryptedPassword)</li>
                                 <li><em class="gras"></em></li>
                                 <li><em class="gras"></em></li>
                                 <li><em class="gras"></em></li>
@@ -218,7 +218,7 @@
                                 <li>On peut supprimer les données stockées dans $_SESSION avec la fonction <em class="gras">session_unset</em></li>
                                 <li><em class="gras">unset($_SESSION['userName'])</em> permet de supprimer l'entrée 'username' de l'array</li>
                                 <li><em class="gras">password_hash()</em> crée un hachage</li>
-                                <li><em class="gras"></em></li>
+                                <li><em class="gras">$_SESSION['username'] = $username;</em> permet de stocker le nom d'utilisateur dans la session courante</li>
                                 <li><em class="gras"></em></li>
                             </ul>
     
