@@ -113,6 +113,8 @@
                         <ul>
                             <li>Il est possible d'interrompre une boucle avec l'instruction <em class="gras">break;</em></li>
                             <li>Il est possible d'interrompre l'itération courante et de passer à la suivante avec l'instruction <em class="gras">continue;</em></li>
+                            <li>La boucle <em class="gras">for (variable in objet)</em> permet de récupérer les clefs d'un tableau</li>
+                            <li>La boucle <em class="gras">for (variable of objet)</em> permet de récupérer chaque valeur d'un tableau</li>
                         </ul>
 
                     <h3>Exemple de boucle while</h3>
