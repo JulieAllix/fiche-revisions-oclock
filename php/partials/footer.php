@@ -1,5 +1,6 @@
 <footer>
         <p id="footer-text">Notes de cours de <a href="https://github.com/JulieAllix">Julie Allix</a></p>
+        
     </footer>
 
 </body>

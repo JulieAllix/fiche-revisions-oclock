@@ -1,13 +1,13 @@
-<?php include 'partials/head.php'; ?>
+<?php require 'partials/head.php'; ?>
 
 <body>
 
-<?php include 'partials/logo.php'; ?>
+<?php require 'partials/logo.php'; ?>
 
     <header>
 
     <h1>Fiche de révisions : Saison 3 - Javascript</h1>
-    <?php include 'partials/main-nav-bar.php'; ?>
+    <?php require 'partials/main-nav-bar.php'; ?>
 
     </header>
 
@@ -232,4 +232,4 @@
 
     </main>
 
-<?php include 'partials/footer.php'; ?>
+<?php require 'partials/footer.php'; ?>
