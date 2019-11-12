@@ -2,7 +2,9 @@
 
 <body>
 
-<?php require 'partials/logo.php'; ?>
+<?php // require 'partials/logo.php'; ?>
+<?php require 'partials/toggleSwitch.php'; ?>
+<script src="../js/toggleSwitch.js"></script>
 
     <header>
 

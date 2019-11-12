@@ -12,12 +12,13 @@
 }
 
 [data-theme="alternative"] {
-    --bg-img: url("../images/geometric-green.jpg");
-    --bg-color: rgb(255, 255, 255, 0.8);
-    --primary-color: red;
-    --secondary-color: #E5AC5C;
+    --bg-img: url("../images/peacock.png");
+    --bg-color: rgb(255, 255, 255, 0.9);
+    --primary-color: rgb(10, 110, 77);
+    --secondary-color: #6DA77C;
+    /*--secondary-color: rgb(33, 68, 124);*/
     --font-color: rgb(30, 28, 31);
-    --footer-color: rgb(255, 92, 51);
+    --footer-color: rgb(236, 173, 37);
     --bold-color: black;
     --add-info-color: grey;
 }
