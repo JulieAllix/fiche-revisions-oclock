@@ -36,6 +36,8 @@
                             <li><em class="gras">$variable += 5;</em> permet d'incrémenter la variable de 5. Fonctionne avec tous les opérateurs (-= += *= /= .=)</li>
                             <li><em class="gras">La boucle Foreach</em> permet de parcourir les tableaux</li>
                             <li>Php utilise le principe du <em class="gras">stateless</em> : entre deux appels au serveur, rien n'est gardé en mémoire</li>
+                            <li>Utiliser <em class="gras">. DIRECTORY_SEPARATOR .</em> à la place du / permet de s'assurer que le chemin du fichier ne sera pas cassé quel que soit le système d'exploitation utilisé</li>
+                            <li><em class="gras">implode(glue, array)</em> glue est l'élément qui va relier tous les éléments du tableau</li>
                         </ul>
 
                     <h3>Fonctions</h3>
@@ -49,7 +51,7 @@
                         <li><em class="gras">count($variable)</em> permet de compter le nombre d'éléments dans un tableau</li>
                         <li><em class="gras">var_dump($variable)</em> permet d'inspecter une variable (de voir ce qu'il y a dedans)</li>
                         <li><em class="gras">empty($variable)</em> permet de vérifier si une valeur est vide ou indéfinie</li>
-                        <li><em class="gras">isset($variable)</em> permet de vérifier si une valeur est définie</li>
+                        <li><em class="gras">isset($variable)</em> permet de vérifier si une variable est définie (a été déclarée)</li>
                         <li><em class="gras">condition ? valeur si vrai : valeur si faux</em> opérateur ternaire</li>
                         <li><em class="gras">strlen</em> retourne la longueur d'une string</li>
                         <li><em class="gras">mail($to, $subject, $message);</em> envoie un e-mail</li>

@@ -30,6 +30,7 @@
                             <li>On déclare une variable par <em class="gras">var variableName = X;</em></li>
                             <li>Le mot-clé <em class="gras">typeof</em> permet de vérifier le type d'une variable (ie. de son contenu)</li>
                             <li>La concaténation s'effectue en js avec l'opérateur <em class="gras">+</em></li>
+                            <li><em class="gras">sum(array)</em> permet de faire la somme de tous les éléments d'un array</li>
                         </ul>
 
                     <h3>Fonctions utiles</h3>
