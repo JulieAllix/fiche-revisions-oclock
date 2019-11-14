@@ -210,6 +210,7 @@
                             <li><em class="gras">th</em>: header du tableau </li>
                             <li><em class="gras">tr</em>: désigne une colonne du tableau</li>
                             <li><em class="gras">td</em>: désigne une cellule du tableau</li>
+                            <li><em class="gras">scope="col"</em>: propriété qui permet de relier les cellules du tableau à leurs en-têtes</li>
                         </ul>
             </article>   
 
