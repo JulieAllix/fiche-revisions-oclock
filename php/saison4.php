@@ -17,23 +17,133 @@
 
         <section id="first-section">
 
+ 
             <article class="topic">
 
-                    <h2>En vrac</h2>
+                <h2>SQL, BDD</h2>
 
-                        <h3>Bon à savoir</h3>
+                    <h3>Phpmyadmin</h3>
 
+                        <ul>
+                            <li><em class="gras">http://localhost/phpmyadmin/</em> permet d'accéder à PMA</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+                    
+                    <h3>Exemples d'instructions SQL</h3>
+
+                        <ul>
+                            <li><em class="gras">SELECT * FROM `tableName`</em> permet de récupérer le contenu d'une table</li>
+                            <li><em class="gras">SELECT * FROM `tableName` WHERE `id`=2</em> permet de récupérer le contenu d'une colonne spécifique</li>
+                            <li><em class="gras">SELECT * FROM `tableName` ORDER BY `name`</em></li> : par défault ORDER BY fait un tri croissant : si on souhaite le préciser mais facultatif, on rajoute le mot clé ASC après le nom du champ. Pour obtenir l'ordre décroissant, on utilise : DESC.
+                            <li><em class="gras">SELECT * FROM `tableName` WHERE `email` LIKE '%@gmail.com%'</em> : permet de filtrer sur les valeurs contenant une chaîne de caractère précise</li>
+                            <li><em class="gras">SELECT * FROM `author` WHERE `image` IS NULL</em></li>
+                            <li><em class="gras">SELECT `title`,`published_date` FROM `post`</em></li>
+                            <li><em class="gras">SELECT COUNT(*) AS `nbArticles` FROM `post`</em> : Compter le nombre d'articles et renommer la colonne en nbArticles</li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+                    
+                    <h3>Etapes pour utiliser SQL dans un fichier php</h3>
+                        
+                        <h4>Etape 1 : connexion à la base de données via instanciation de la classe PDO (PHP Data Objects)</h4>
                             <ul>
-                                <li><em class="gras">Network</em> dans l'inspecteur de Chrome permet de voir s'il manque des éléments qui ont été appelés dans le code (img par ex)</li>
-                                <li><em class="gras"></em></li>
-                                <li><em class="gras"></em></li>
-                                <li><em class="gras"></em></li>
-                                <li><em class="gras"></em></li>
-                                <li><em class="gras"></em></li>
-                                <li><em class="gras"></em></li>
-                                <li><em class="gras"></em></li>
-                                <li><em class="gras"></em></li>
+                                <li>$dataSourceName = 'mysql:dbname=oblog;host=localhost;charset=UTF8';</li>
+                                <li>$user = 'oblog';</li>
+                                <li>$password = 'oblog';</li>
+                                <li>try {</li>
+                                <li>$pdoDBConnexion = new PDO(</li>
+                                <li>$dataSourceName,</li>
+                                <li>$user,</li>
+                                <li>$password,</li>
+                                <li>array(</li>
+                                <li>PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING</li>
+                                <li>)</li>
+                                <li>);</li>
+                                <li>} catch (PDOException $exception) {</li>
+                                <li>echo 'Connexion échouée : ' . $exception->getMessage();</li>
+                                <li>}</li>
                             </ul>
+                        
+                        <h4>Etape 2 : on écrit sa requête dans une string</h4>
+                        <ul>
+                            <li>$sql = '</li>
+                            <li>SELECT *</li>
+                            <li>FROM `author`</li>
+                            <li>';</li>
+                        
+                        </ul>
+
+                        <h4>Etape 3 : on exécute la requête de type SELECT avec query</h4>
+                        <ul>
+                            <li>$pdoStatement = $pdoDBConnexion->query($sql);</li>
+                            <li>var_dump($pdoStatement);</li>
+                            <li>if ($pdoStatement === false) {</li>
+                            <li>var_dump($pdoStatement->errorInfo());</li>
+                            <li>exit('Il y a eu un problème, désolé :-/');</li>
+                            <li>}</li>
+                        </ul>
+
+                        <h4>Etape 4 : on récupère le résultat de la requête</h4>
+                        <ul>
+                            <li>$results = $pdoStatement->fetchAll(PDO::FETCH_ASSOC);</li>
+                        
+                        </ul>
+            </article>
+
+            <article class="topic">
+
+                <h2>POO</h2>
+
+                    <h3>Bon à savoir</h3>
+
+                        <ul>
+                            <li><em class="gras">$this</em> fait référence à l'objet qui a appelé la méthode</li>
+                            <li><em class="gras">Une méthode</em> est une fonction à l'intérieur d'une classe</li>
+                            <li><em class="gras">L'encapsulation</em> désigne le principe de regrouper des données avec un ensemble de méthodes permettant de les lire ou de les manipuler, empêchant l'accès aux données par un autre moyen que les services proposés. L'encapsulation permet donc de garantir l'intégrité des données contenues dans l'objet</li>
+                            <li>Il est possible de comparer deux fichiers dans VSC : il faut les sélectionner puis <em class="gras">clic droit, comparer</em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>Balises, propriétés, etc</h3>
+
+                        <ul>
+                            <li><em class="gras">class className {}</em> permet de définir une classe</li>
+                            <li><em class="gras">public function __construct()</em> est une méthode qui permet d'attribuer automatiquement des valeurs aux paramètres</li>
+                            <li><em class="gras">$objet -> propriété</em> permet d'afficher la valeur d'une propriété</li>
+                            <li><em class="gras">$objet = new class();</em> permet de créer un objet à partir d'une classe</li>
+                            <li><em class="gras">$objet->propriété = valeur;</em> permet d'attribuer une valeur à une propriété</li>
+                            <li><em class="gras">$objet->méthode(paramètre);</em> permet d'appeler une méthode sur un objet</li>
+                            <li><em class="gras">private</em> contrairement à public, private vérouille l'accès aux propriétés et méthodes qui sont dans un objet (elles sont accessibles uniquement depuis le contexte interne de l'objet). On utilise plutôt private pour les propriétés et public pour les fonctions</li>
+                            <li><em class="gras">$objet->fonction();</em> permet d'appeler une méthode publique</li>
+                            <li><em class="gras">str-replace('ce que je veux remplacer','par quoi', élément où l'appliquer)</em> permet de remplacer une string</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+                </article>
+
+        </section>
+
+        <section id="second-section">
+
+            <article class="topic"> 
+
+                <h2>En vrac</h2>
+
+                    <h3>Bon à savoir</h3>
+
+                        <ul>
+                            <li><em class="gras">Network</em> dans l'inspecteur de Chrome permet de voir s'il manque des éléments qui ont été appelés dans le code (img par ex)</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
 
             </article>
 
@@ -72,43 +182,9 @@
 
             </article> 
 
+           
+
             <article class="topic">
-
-                <h2>POO</h2>
-
-                    <h3>Bon à savoir</h3>
-
-                        <ul>
-                            <li><em class="gras">$this</em> fait référence à l'objet qui a appelé la méthode</li>
-                            <li><em class="gras">Une méthode</em> est une fonction à l'intérieur d'une classe</li>
-                            <li><em class="gras">L'encapsulation</em> désigne le principe de regrouper des données avec un ensemble de méthodes permettant de les lire ou de les manipuler, empêchant l'accès aux données par un autre moyen que les services proposés. L'encapsulation permet donc de garantir l'intégrité des données contenues dans l'objet</li>
-                            <li>Il est possible de comparer deux fichiers dans VSC : il faut les sélectionner puis <em class="gras">clic droit, comparer</em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                        </ul>
-
-                    <h3>Balises, propriétés, etc</h3>
-
-                        <ul>
-                            <li><em class="gras">class className {}</em> permet de définir une classe</li>
-                            <li><em class="gras">public function __construct()</em> est une méthode qui permet d'attribuer automatiquement des valeurs aux paramètres</li>
-                            <li><em class="gras">$objet -> propriété</em> permet d'afficher la valeur d'une propriété</li>
-                            <li><em class="gras">$objet = new class();</em> permet de créer un objet à partir d'une classe</li>
-                            <li><em class="gras">$objet->propriété = valeur;</em> permet d'attribuer une valeur à une propriété</li>
-                            <li><em class="gras">$objet->méthode(paramètre);</em> permet d'appeler une méthode sur un objet</li>
-                            <li><em class="gras">private</em> contrairement à public, private vérouille l'accès aux propriétés et méthodes qui sont dans un objet (elles sont accessibles uniquement depuis le contexte interne de l'objet). On utilise plutôt private pour les propriétés et public pour les fonctions</li>
-                            <li><em class="gras">$objet->fonction();</em> permet d'appeler une méthode publique</li>
-                            <li><em class="gras">str-replace('ce que je veux remplacer','par quoi', élément où l'appliquer)</em> permet de remplacer une string</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                        </ul>
-            </article>
-
-        </section>
-
-        <section id="second-section">
-
-            <article class="topic">   
 
                 <h2>Exemples utiles</h2>
 
@@ -190,26 +266,7 @@
                     
             </article>
 
-            <article class="topic">
 
-                <h2>SQL, BDD</h2>
-
-                    <h3>Phpmyadmin</h3>
-
-                        <ul>
-                            <li><em class="gras">http://localhost/phpmyadmin/</em> permet d'accéder à PMA</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                        </ul>
-                    
-                    <h3></h3>
-
-                        <ul>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                        </ul>
-    
             </article>
 
         </section>
