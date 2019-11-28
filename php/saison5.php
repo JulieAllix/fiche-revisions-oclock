@@ -78,12 +78,16 @@
 
             <article class="topic">
 
-                <h2></h2>
+                <h2>PHP</h2>
 
-                    <h3></h3>
+                    <h3>Good to know</h3>
 
                         <ul>
-                            <li><em class="gras"></em></li>
+                            <li>Le fichier point d'entrée est appelé <em class="gras"></em>Front Controller</li>
+                            <li>On crée un fichier par classe (bonne pratique)</li>
+                            <li>On met une majuscule au nom des fichiers qui contiennent une classe</li>
+                            <li></li>
+                            <li></li>
                         </ul>
                     
                     <h3></h3>
