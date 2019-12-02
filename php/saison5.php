@@ -159,6 +159,39 @@
     
             </article>
 
+            <article class="topic">
+
+                <h2>SQL</h2>
+
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li>Pour sélectionner les title d'une table post, on fera <em class="gras">post.title</em></li>
+                            <li>Pour découper le content d'une table post (en ne gardant que les 10 premiers caractères par ex), on fera <em class="gras">SUBSTRING(post.content, 1, 50)</em></li>
+                            <li><em class="gras">CONCAT(x,y)</em> permet de concaténer x et y</li>
+                            <li><em class="gras">NOT IN(x,y)</em> permet d'exclure x et y</li>
+                            <li><em class="gras">JOIN</em> ajoute des colonnes provenant d'autres tables</li>
+                            <li><em class="gras">JOIN author ON post.author_id = author.id</em> fait un filtre sur author id et supprime les autres combinaisons</li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    
+                    <h3></h3>
+
+                        <ul>
+  
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+    
+            </article>
+
         </section>
 
     </main>
