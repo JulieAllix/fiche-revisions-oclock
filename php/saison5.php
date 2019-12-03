@@ -71,7 +71,7 @@
                             <li><em class="gras">$match = $router->match();</em> permet de vérifier s'il y a une route correspondant à la page demandée</li>
                             <li><em class="gras">vendor/autoload.php</em> permet de charger toutes les dépendances. Il faut donc le require pour les charger dans un fichier donné.</li>
                             
-                            <li><em class="gras"></em></li>
+                            <li><em class="gras">$router->generate(nomDeLaRoute,id(si nécessaire))</em> permet de générer un url </li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
@@ -94,7 +94,25 @@
 
             </article> 
 
+            <article class="topic">
 
+                <h2>Héritage</h2>
+
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li><em class="gras">class Y extends X {}</em> permet à la classe Y d'accéder à toutes les propriétés et méthodes de la classe X (sauf celles qui sont private</li>
+                            <li>La visibilité <em class="gras">protected</em> autorise l'accès à une propriété à toutes les classes qui ont hérité de la classe parente</li>
+                            <li><em class="gras">global</em> permet d'accéder à une variable extérieure une fonction dans celle-ci</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article> 
         
         </section>
 
@@ -137,6 +155,8 @@
                             <li>Le fichier point d'entrée est appelé <em class="gras"></em>Front Controller</li>
                             <li>On crée un fichier par classe (bonne pratique)</li>
                             <li>On met une majuscule au nom des fichiers qui contiennent une classe</li>
+                            <li>Dans <em class="gras">public function find(int $id): Product</em>, on précise que le paramètre attendu est un int, et que la fonction va return une variable de la classe Product</li>
+                            <li>Les <em class="gras">doc blocks</em> permettent de préciser les types attendus. Les plus courants sont @return, @param et @var.</li>
                             <li></li>
                             <li></li>
                         </ul>
@@ -172,6 +192,9 @@
                             <li><em class="gras">NOT IN(x,y)</em> permet d'exclure x et y</li>
                             <li><em class="gras">JOIN</em> ajoute des colonnes provenant d'autres tables</li>
                             <li><em class="gras">JOIN author ON post.author_id = author.id</em> fait un filtre sur author id et supprime les autres combinaisons</li>
+                            <li><em class="gras">BETWEEN x AND y</em> permet de sélectionner des éléments entre deux bornes</li>
+                            <li><em class="gras">LIMIT</em> limite le nombre maximum de résultats</li>
+                            <li><em class="gras">AS</em> permet de renommer une colonne</li>
                             <li></li>
                             <li></li>
                         </ul>
