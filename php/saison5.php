@@ -113,6 +113,31 @@
                         </ul>
 
             </article> 
+
+            <article class="topic">
+
+                <h2>Namespaces</h2>
+
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li>Le mot clé <em class="gras">namespace</em> permet de déclarer un espace de nom.</li>
+                            <li>La visibilité <em class="gras">protected</em> autorise l'accès à une propriété à toutes les classes qui ont hérité de la classe parente</li>
+                            <li><em class="gras">use</em> permet de faire appel à une classe rangée dans un namespace</li>
+                            <li>Les namespaces doivent refléter l'arborescence des dossiers/fichiers et le nom du fichier de classe doit être identique au nom de la classe elle-même</li>
+                            <li>Dans composer.json, on initie un autoload ainsi:</li>
+                            <li>"autoload": {</li>
+                            <li>"psr-4": {"Oshop\\": "app/"}</li>
+                            <li>}</li>
+                            <li>Oshop étant le nom de la racine virtuelle dans cet exemple et app/ la véritable racine des classes</li>
+                            <li><em class="gras">require __DIR__ . '/../vendor/autoload.php';</em> un require est nécessaire au point d'entrée du projet pour utiliser autoload</li>
+                            <li>L'autoload s'utilise avec la commande <em class="gras">compoer dump-autoload</em></li>
+                            <li><em class="gras">__CLASS__</em> donne le nom complet de la classe courante</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                </article> 
         
         </section>
 
