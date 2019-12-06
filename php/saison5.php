@@ -95,26 +95,6 @@
 
             <article class="topic">
 
-                <h2>Héritage</h2>
-
-                    <h3>Good to know</h3>
-
-                        <ul>
-                            <li><em class="gras">class Y extends X {}</em> permet à la classe Y d'accéder à toutes les propriétés et méthodes de la classe X (sauf celles qui sont private</li>
-                            <li>La visibilité <em class="gras">protected</em> autorise l'accès à une propriété à toutes les classes qui ont hérité de la classe parente</li>
-                            <li><em class="gras">global</em> permet d'accéder à une variable extérieure une fonction dans celle-ci</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                        </ul>
-
-            </article> 
-
-            <article class="topic">
-
                 <h2>Namespaces</h2>
 
                     <h3>Good to know</h3>
@@ -162,11 +142,6 @@
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul>
-
-                   
-                    <h3></h3>
-                        <p></p>
-                        <p></p>
                     
             </article>
 
@@ -193,14 +168,6 @@
                             <li><em class="gras">Model</em>: c'est une couche qui correspond à l'ensemble des classes définissant les objets manipulés par l'application, qui contiennent les données et réalisent les opérations de stockage. Le Model protège l'intégrité des données en implémentant la logique métier et s'occupe du stockage.</li>
                             <li><em class="gras">Controller</em>: gère l'aspect dynamique de l'application. A partir de la requête utilisateur, il récupère les données grâce au Model, les injecte dans la View correspondante, et envoie la réponse produite.</li>
                             <li><em class="gras">Dispatcher</em>: instancie le Controller et exécute l'action.</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
                         </ul>
     
             </article>
@@ -221,25 +188,23 @@
                             <li><em class="gras">BETWEEN x AND y</em> permet de sélectionner des éléments entre deux bornes</li>
                             <li><em class="gras">LIMIT</em> limite le nombre maximum de résultats</li>
                             <li><em class="gras">AS</em> permet de renommer une colonne</li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    
-                    <h3></h3>
-
-                        <ul>
-  
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
                         </ul>
     
             </article>
+
+            <article class="topic">
+
+                <h2>Héritage</h2>
+
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li><em class="gras">class Y extends X {}</em> permet à la classe Y d'accéder à toutes les propriétés et méthodes de la classe X (sauf celles qui sont private</li>
+                            <li>La visibilité <em class="gras">protected</em> autorise l'accès à une propriété à toutes les classes qui ont hérité de la classe parente</li>
+                            <li><em class="gras">global</em> permet d'accéder à une variable extérieure une fonction dans celle-ci</li>
+                        </ul>
+
+                </article> 
 
         </section>
 
