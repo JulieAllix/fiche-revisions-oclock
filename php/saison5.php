@@ -61,8 +61,7 @@
                             <li>Les packages s'installent à la racine de notre repo</li>
                             <li>Quand on a un projet avec un composer.json, toujours faire un <em class="gras">composer install</em> dans le terminal pour récupérer les dépendances</li>
                             <li><em class="gras">composer update</em> permet de faire des màj dans le repo</li>
-                            <li></li>
-                            <li></li>
+                            <li><em class="gras">composer dump-autoload</em> est nécessaire à chaque fois qu'une modification est faite dans composer.json</li>
                             <li><em class="gras">symfony/var_dumper</em> permet d'afficher les var_dump de façon + clean. On utilise le raccourci dump.</li>
                             <li><em class="gras">altorouter</em> permet d'aller chercher des paramètres d'url dynamiques</li>
                             <li><em class="gras">$router->setBasePath($_SERVER['BASE_URI']);</em> sert à indiquer où se trouve la racine de mon site. Il faut le placer dans l'index, en général.</li>
@@ -124,6 +123,7 @@
                             <li>Le mot clé <em class="gras">namespace</em> permet de déclarer un espace de nom.</li>
                             <li>La visibilité <em class="gras">protected</em> autorise l'accès à une propriété à toutes les classes qui ont hérité de la classe parente</li>
                             <li><em class="gras">use</em> permet de faire appel à une classe rangée dans un namespace</li>
+                            <li>On peut faire appel à plusieurs classes en une seule ligne avec use, par exemple on ferait : <em class="gras">use Oshop\Models\{Product, Category, Type, Brand};</em>
                             <li>Les namespaces doivent refléter l'arborescence des dossiers/fichiers et le nom du fichier de classe doit être identique au nom de la classe elle-même</li>
                             <li>Dans composer.json, on initie un autoload ainsi:</li>
                             <li>"autoload": {</li>
@@ -182,7 +182,8 @@
                             <li>On met une majuscule au nom des fichiers qui contiennent une classe</li>
                             <li>Dans <em class="gras">public function find(int $id): Product</em>, on précise que le paramètre attendu est un int, et que la fonction va return une variable de la classe Product</li>
                             <li>Les <em class="gras">doc blocks</em> permettent de préciser les types attendus. Les plus courants sont @return, @param et @var.</li>
-                            <li></li>
+                            <li><em class="gras">$absoluteUrl = isset($_SERVER['BASE_URI']) ? $_SERVER['BASE_URI'] : '';</em> permet de créer un raccourci d'url. il peut être très pratique de le positionner dans le CoreController</li>
+                            <li><em class="gras">extract($viewVars);</em> permet de créer des variables à partir du nom des clefs du tableau</li> 
                             <li></li>
                         </ul>
                     
