@@ -168,6 +168,7 @@
                             <li><em class="gras">Model</em>: c'est une couche qui correspond à l'ensemble des classes définissant les objets manipulés par l'application, qui contiennent les données et réalisent les opérations de stockage. Le Model protège l'intégrité des données en implémentant la logique métier et s'occupe du stockage.</li>
                             <li><em class="gras">Controller</em>: gère l'aspect dynamique de l'application. A partir de la requête utilisateur, il récupère les données grâce au Model, les injecte dans la View correspondante, et envoie la réponse produite.</li>
                             <li><em class="gras">Dispatcher</em>: instancie le Controller et exécute l'action.</li>
+                            <li>Les Models s'occupent des données, les Views du rendu html, et les Controllers s'occupent du reste (càd le code "logique")</li>
                         </ul>
     
             </article>
