@@ -27,8 +27,8 @@
                             <li>Le langage commun à js et php est le <em class="gras">json</em></li>
                             <li>Ajax, c'est du js qui communique avec un serveur en asynchrone</li>
                             <li><em class="gras">() => {}</em> est l'équivalent de function(){}</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li><em class="gras">${variable}</em> permet d'insérer une variable js dans une chaîne de caractères</li>
+                            <li><em class="gras">$(app.init)</em> permet de lancer notre script à la fin du chargement du DOM</li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
@@ -56,17 +56,17 @@
                         <ul>
                             <li>La méthode Ajax permet d'appeler un serveur de manière asynchrone (voir exemple ci-dessous)</li>
                             <li>On peut transmettre des variables via la méthode ajax en ajoutant <em class="gras">data: {nomVariable1: "hello", nomVariable2: "test"}</em></li>
+                            <li>La méthode par défaut est GET (donc on peut ne pas la préciser si on veut utiliser la méthode GET)</li>
                             <li></li>
                             <li></li>
-                            <li></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li><em class="gras">dataType</em> est par défaut en Intelligent Guess : il peut deviner tout seul le format du contenu de l'API. Donc on peut ne pas le préciser.</li>
+                            <li><em class="gras"></em>Il vaut mieux éviter les boucles while si on attend une réponse qui provient d'une requête asynchrone</li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul>
                     
-                    <h3>Méthode Ajax - exemple</h3>
+                    <h3>Méthode Ajax - squelette</h3>
 
                         <ul>
                             <li>let request = $.ajax({</li>
@@ -96,19 +96,64 @@
 
             <article class="topic">
 
-                <h2></h2>
+                <h2>Utilisation d'API externes</h2>
 
-                    <h3></h3>
+                    <h3>Good to know</h3>
 
                         <ul>
+                            <li>Les api précisent par défaut leur dataType, donc pas besoin de le préciser. On peut ne préciser que l'url pour faire appel à une API.</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
                             <li><em class="gras"></em></li>
                         </ul>
 
-                   
-                    <h3></h3>
+                    <h3>Exemple d'appel à une API</h3>
+                        <p>let request = $.ajax('https://swapi.co/api/starships/');</p>
+                        <p>request.done(function(response) {</p>
+                        <p>let ulElt = $('<ul>');</p>
+                        <p>$.each(response.results, (index, starship) => {</p>
+                        <p>let liElt = $('<li>');</p>
+                        <p>liElt.html(`<strong> ${starship.name} </strong> : ${starship.model}`);</p>
+                        <p>ulElt.append(liElt);</p>
+                        <p>});</p>
+                        <p>$('#swapi').replaceWith(ulElt);</p>
+                        <p>})</p>
                         <p></p>
                         <p></p>
                     
+                    <h3>Autre exemple utilisant une syntaxe plus courte</h3>
+                        <p>loadPeoplePage: (pageUrl, ulElement) => {</p>
+                        <p></p>
+                        <p>$.ajax(pageUrl).done((response) => {</p>
+                        <p>$.each(response.results, (index, people) => {</p>
+                        <p>$('< li>').text(people.name).appendTo(ulElement);</p>
+                        <p>});</p>
+                        <p>if(response.next) {</p>
+                        <p>app.loadPeoplePage(response.next, ulElement);</p>
+                        <p>}</p>
+                        <p>});</p>
+                        <p>}</p>
+                        <p></p>
+                    
+                    <h3>Exemple de requête Ajax imbriquée</h3>
+                    <p>loadMoviePlanets: (movieId) => {</p>
+                    <p>$.ajax(`https://swapi.co/api/films/${movieId}/`).done((movie) => {</p>
+                    <p>$.each(movie.planets, (index, planetUrl) => {</p>
+                    <p>$.ajax(planetUrl).done((planet) => {</p>
+                    <p>console.log(planet.name);</p>
+                    <p>});</p>
+                    <p>});</p>
+                    <p>});</p>
+                    <p>}</p>
+                    <p></p>
+                        
             </article>
 
             <article class="topic">
