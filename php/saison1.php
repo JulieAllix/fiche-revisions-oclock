@@ -125,6 +125,7 @@
                                 <li><em class="gras">clear</em>: l'élément cible va se placer en-dessous d'un élément qui flotte à côté</li>
                                 <li><em class="gras">inherit</em>: la valeur sera héritée du plus proche parent pour lequel cette propriété est définie</li>
                                 <li><em class="gras">width: calc(X% - Xpx)</em>: solution standard pour espacer des éléments de façon standard + les redimensionner</li>
+                                <li><em class="gras">overflow-x: scroll</em>: permet d'ajouter une barre de scroll</li>
                             </ul>
 
                     <h3>Balises et propriétés concernant le positionnement avancé</h3>

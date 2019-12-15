@@ -29,7 +29,7 @@
                             <li><em class="gras">() => {}</em> est l'équivalent de function(){}</li>
                             <li><em class="gras">${variable}</em> permet d'insérer une variable js dans une chaîne de caractères</li>
                             <li><em class="gras">$(app.init)</em> permet de lancer notre script à la fin du chargement du DOM</li>
-                            <li><em class="gras"></em></li>
+                            <li>Quand on appelle une fonction via un .on('event', function), on ne met pas de () après la function, car on n'appelle pas la function tout de suite, on ne l'appelle que lorsque l'event se produit</li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
@@ -44,6 +44,16 @@
                             <li><em class="gras">$('#id')</em> permet de sélectionner un élément du DOM par son id</li>
                             <li><em class="gras">.on('event','function')</em> permet d'ajouter un event listener sur un élément du DOM (on peut le retirer avec .off)</li>
                             <li><em class="gras">$element.text('test')</em> permet de modifier le contenu d'un élément (.text peut être remplacé par .html ou autre selon les besoins)</li>
+                            <li><em class="gras">$</em> est une fonction qui peut faire trois choses : lancer une fonction une fois que la page est chargée (ex: <em class="gras">$(app.init)</em>), créer un nouvel élément (ex: <em class="gras">$('< li>')</em>), sélectionner un élément du DOM (ex: <em class="gras">$('#id')</em>)</li>
+                            <li>Pour cibler un enfant qui n'est pas un enfant direct on met un espace, exemple :<em class="gras"> $('#parent #enfant')</em></li>
+                            <li>Pour cibler un enfant direct, on met un chevron, exemple :<em class="gras">$('#parent > #enfant')</em></li>
+                            <li><em class="gras">let inputValue = $('#addListForm input').val()</em> : permet de récupérer la valeur de l'input contenu dans le parent addListForm</li>
+                            <li>On peut aussi ajouter un id sur l'élément input: <em class="gras">let inputValue = $('#addListFormNameInput').val()</em></li>
+                            <li><em class="gras">let listElement = $('#list-template').contents().clone()</em> permet ce copier le contenu de l'id list-template et de le cloner dans la variable listElement</li>
+                            <li><em class="gras">listElement.find('h2').text(listName)</em> à l'intérieur de mon élément list je recherche le tag h2 pour y mettre le titre de la liste </li>
+                            <li><em class="gras">element.insertBefore('#finalElt')</em> permet d'insérer element avant finalElt</li>
+                            <li><em class="gras"> element.attr('id', "list-" + listId)</em> permet d'ajouter un attribut id portant le nom "list-" + listId à element</li>
+                            <li><em class="gras">.addClass</em> permet d'ajouter une classe à un élément. On peut aussi en retirer un avec .removeClass</li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
