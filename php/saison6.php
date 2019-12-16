@@ -112,7 +112,7 @@
 
                         <ul>
                             <li>Les api précisent par défaut leur dataType, donc pas besoin de le préciser. On peut ne préciser que l'url pour faire appel à une API.</li>
-                            <li></li>
+                            <li>Une API rest est une API à laquelle on accède via le protocole http</li>
                             <li></li>
                             <li></li>
                             <li></li>
@@ -168,12 +168,13 @@
 
             <article class="topic">
 
-                <h2></h2>
+                <h2>BDD</h2>
 
-                    <h3></h3>
+                    <h3>Good to know</h3>
 
                         <ul>
-                            <li><em class="gras"></em></li>
+                            <li>Dans le cadre d'une relation <em class="gras">many to many</em>, on relie deux tables à l'aide d'une table intermédiaire</li>
+                            <li>Sur Phpmyadmin, dans Structure -> Vue Relationnelle -> <em class="gras">Contraintes de clé étrangère</em> permet de restreindre les données saisies à un périmètre défini</li>
                         </ul>
                     
                     <h3></h3>
