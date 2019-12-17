@@ -106,6 +106,24 @@
 
             <article class="topic">
 
+                <h2>En vrac</h2>
+
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li><em class="gras">ControllerName::class</em> est une string qui contient le namespace, par exemple: ListController:class renvoie "oKanban\Controllers\ListController"</li>
+                            <li><em class="gras"><a href="https://drive.google.com/file/d/14kDawUN9ckwIxqz3nNPFONcM-3VPrLLs/view">Lien vers le schéma pour savoir quand choisir query, exec, ou prepare</a></em></li>
+                            <li><em class="gras">$baseUri = isset($_SERVER['BASE_URI']) ? $_SERVER['BASE_URI'] : '';</em></li>
+                            <li><em class="gras">$this->router->setBasePath($baseUri); </em>: ces deux lignes permettent d'éviter un bug lié à la présence ou non de la base URI selon qu'on est en localhost ou en virtualhost</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article>
+
+            <article class="topic">
+
                 <h2>Utilisation d'API externes</h2>
 
                     <h3>Good to know</h3>
@@ -168,20 +186,29 @@
 
             <article class="topic">
 
-                <h2>BDD</h2>
+                <h2>BDD - SQL</h2>
 
-                    <h3>Good to know</h3>
+                    <h3>BDD</h3>
 
                         <ul>
                             <li>Dans le cadre d'une relation <em class="gras">many to many</em>, on relie deux tables à l'aide d'une table intermédiaire</li>
                             <li>Sur Phpmyadmin, dans Structure -> Vue Relationnelle -> <em class="gras">Contraintes de clé étrangère</em> permet de restreindre les données saisies à un périmètre défini</li>
+                            <li>Méthodes courantes liées à une BDD: CRUD -> Create, Read, Update, Delete</li>
+                            <li></li>
                         </ul>
                     
-                    <h3></h3>
+                    <h3>SQL</h3>
 
                         <ul>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li>Lorsqu'on inclut des variables dans notre requête SQL, on doit sécuriser notre code avec <em class="gras">la méthode bind</em>, ex :</li>
+                            <li>$sql = "SELECT * FROM list WHERE id = :id";</li>
+                            <li>$pdo = Database::getPDO();</li>
+                            <li>$pdoStatement = $pdo->prepare($sql);</li>
+                            <li>$pdoStatement->bindParam(":id", $id, PDO::PARAM_INT);</li>
+                            <li>$pdoStatement->execute();</li>
+                            <li></li>
+                            <li></li>
+                            <li>Lorsque les models font eux-même leurs requêtes SQL, on parle d'<em class="gras">Active Record</em></li>
                         </ul>
     
             </article>

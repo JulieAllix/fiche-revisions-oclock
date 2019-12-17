@@ -169,6 +169,14 @@
                             <li><em class="gras">Controller</em>: gère l'aspect dynamique de l'application. A partir de la requête utilisateur, il récupère les données grâce au Model, les injecte dans la View correspondante, et envoie la réponse produite.</li>
                             <li><em class="gras">Dispatcher</em>: instancie le Controller et exécute l'action.</li>
                             <li>Les Models s'occupent des données, les Views du rendu html, et les Controllers s'occupent du reste (càd le code "logique")</li>
+                            <li><em class="gras">Etapes pour créer une structure d'application MVC :</em></li>
+                            <li>1. Composer require des librairies dont on a besoin (altorouter)</li>
+                            <li>2. Configurer l'autoload dans composer.json</li>
+                            <li>3. Corriger le namespace de la classe Database (et ajouter un use pour que PDO fonctionne)</li>
+                            <li>4. On configure .gitignore pour ne pas commiter le dossier vendor</li>
+                            <li>5. On crée le fichier htaccess pour configurer le front controlleur avec Apache</li>
+                            <li>6. On ajoute une classe App qui va represer notre application et contenir le routage</li>
+                            <li></li>
                         </ul>
     
             </article>
