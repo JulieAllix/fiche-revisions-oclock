@@ -98,7 +98,35 @@
 
             </article> 
 
+            <article class="topic">
 
+                <h2>BDD - SQL</h2>
+
+                    <h3>BDD</h3>
+
+                        <ul>
+                            <li>Dans le cadre d'une relation <em class="gras">many to many</em>, on relie deux tables à l'aide d'une table intermédiaire</li>
+                            <li>Sur Phpmyadmin, dans Structure -> Vue Relationnelle -> <em class="gras">Contraintes de clé étrangère</em> permet de restreindre les données saisies à un périmètre défini</li>
+                            <li>Méthodes courantes liées à une BDD: CRUD -> Create, Read, Update, Delete</li>
+                            <li></li>
+                        </ul>
+                    
+                    <h3>SQL</h3>
+
+                        <ul>
+                            <li>Lorsqu'on inclut des variables dans notre requête SQL, on doit sécuriser notre code avec <em class="gras">la méthode bind</em>, ex :</li>
+                            <li>$sql = "SELECT * FROM list WHERE id = :id";</li>
+                            <li>$pdo = Database::getPDO();</li>
+                            <li>$pdoStatement = $pdo->prepare($sql);</li>
+                            <li>$pdoStatement->bindParam(":id", $id, PDO::PARAM_INT);</li>
+                            <li>$pdoStatement->execute();</li>
+                            <li></li>
+                            <li></li>
+                            <li>Lorsque les models font eux-même leurs requêtes SQL, on parle d'<em class="gras">Active Record</em></li>
+                            <li><em class="gras">Astuce :</em> dans PHPMyAdmin, dans l'onglet insérer, il y a un bouton <em class="gras">Aperçu</em> qui permet de voir le code SQL généré par l'insertion qu'on a effectuée</li>
+                        </ul>
+    
+            </article>
         
         </section>
 
@@ -115,9 +143,49 @@
                             <li><em class="gras"><a href="https://drive.google.com/file/d/14kDawUN9ckwIxqz3nNPFONcM-3VPrLLs/view">Lien vers le schéma pour savoir quand choisir query, exec, ou prepare</a></em></li>
                             <li><em class="gras">$baseUri = isset($_SERVER['BASE_URI']) ? $_SERVER['BASE_URI'] : '';</em></li>
                             <li><em class="gras">$this->router->setBasePath($baseUri); </em>: ces deux lignes permettent d'éviter un bug lié à la présence ou non de la base URI selon qu'on est en localhost ou en virtualhost</li>
+                            <li>L'application <em class="gras">Postman</em> simule un form.</li>
+                            <li><em class="gras">$pdo->lastInsertId()</em> permet de récupérer le dernier id inséré dans une table</li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article>
+
+            <article class="topic">
+
+                <h2>Modèle MVC: méthodes statiques et abstraites</h2>
+
+                    <h3>Méthodes statiques</h3>
+
+                        <ul>
+                            <li>En rajoutant <em class="gras">static</em> devant une méthode, on n'a plus besoin de créer un objet vide pour récupérer des objets remplis. Ex: public static function findAll().</li>
+                            <li>Les méthodes et propriétés statiques sont partagées par toutes les instances, et accessibles directement à partir du nom de la classe.</li>
+                            <li>Pour appeler une méthode statique dans le controller, on fait <em class="gras">Model::nomDeLaMéthode</em></li>
+                            <li>Une méthode statique reste attachée à la classe et pas aux objets instanciés à partir de cette classe.</li>
+                            <li><em class="gras">$this</em> ne peut pas être utilisé dans une méthode statique car cette dernière reste liée à la classe et pas à un objet. En effet, on utilise <em class="gras">self</em> pour faire référence à la classe dans laquelle on se trouve, et <em class="gras">this</em> pour faire référence à l'objet dans lequel on se trouve.</li>
+                            <li><em class="gras">static</em> fait référence à la classe-type de l'objet sur lequel est appelée la méthode. Si l'objet est du type de la classe courante, le traitement est identique. Mais si l'objet est d'une classe héritant de la classe courante, le résultat peut être différent selon les propriétés de la classe fille (cf branche pls-party de l'épisode 6).</li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                        </ul>
+                    
+                        <h3>Méthodes abstraites</h3>
+
+                        <ul>
+                            <li></li>
+                            <li>En rajoutant <em class="gras">abstract</em> devant une méthode dans une classe d'un fichier parent, on oblige tous les enfants de cette classe à déclarer cette méthode. Ex: abstract public static function findAll();</li>
+                            <li>Lorsqu'on ajoute <em class="gras">implements JsonSerializable</em> à une classe, on l'engage à implémenter la fonction jsonSerialize. C'est une fonction PHP qui va renvoyer les données que l'on souhaite sérialiser sous forme d'un tableau associatif. Cette fonction va etre automatiquement utilisée par json_encode() qui va essayer de la trouver avec de serialiser cet objet.</li>
+                            <li><em class="gras">Exemple de fonction jsonSerialize :</em></li>
+                            <li>public function jsonSerialize() {</li>
+                            <li>$serializedObject = [</li>
+                            <li>"id" => $this->id,</li>
+                            <li>"name" => $this->name,</li>
+                            <li>"page_order" => $this->page_order,</li>
+                            <li>"created_at" => $this->created_at,</li>
+                            <li>"updated_at" => $this->updated_at,</li>
+                            <li>];</li>
+                            <li>return $serializedObject;</li>
+                            <li>}</li>
+                            <li>Cela permet notamment à json_encode d'accéder à des propriétés qui sont en visibilité <em class="gras">protected</em>.</li>
+                            <li>Ici on a créé un genre de <em class="gras">getter général</em>.</li>
                         </ul>
 
             </article>
@@ -182,35 +250,6 @@
                     <p>}</p>
                     <p></p>
                         
-            </article>
-
-            <article class="topic">
-
-                <h2>BDD - SQL</h2>
-
-                    <h3>BDD</h3>
-
-                        <ul>
-                            <li>Dans le cadre d'une relation <em class="gras">many to many</em>, on relie deux tables à l'aide d'une table intermédiaire</li>
-                            <li>Sur Phpmyadmin, dans Structure -> Vue Relationnelle -> <em class="gras">Contraintes de clé étrangère</em> permet de restreindre les données saisies à un périmètre défini</li>
-                            <li>Méthodes courantes liées à une BDD: CRUD -> Create, Read, Update, Delete</li>
-                            <li></li>
-                        </ul>
-                    
-                    <h3>SQL</h3>
-
-                        <ul>
-                            <li>Lorsqu'on inclut des variables dans notre requête SQL, on doit sécuriser notre code avec <em class="gras">la méthode bind</em>, ex :</li>
-                            <li>$sql = "SELECT * FROM list WHERE id = :id";</li>
-                            <li>$pdo = Database::getPDO();</li>
-                            <li>$pdoStatement = $pdo->prepare($sql);</li>
-                            <li>$pdoStatement->bindParam(":id", $id, PDO::PARAM_INT);</li>
-                            <li>$pdoStatement->execute();</li>
-                            <li></li>
-                            <li></li>
-                            <li>Lorsque les models font eux-même leurs requêtes SQL, on parle d'<em class="gras">Active Record</em></li>
-                        </ul>
-    
             </article>
 
         </section>
