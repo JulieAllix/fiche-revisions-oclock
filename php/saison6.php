@@ -64,15 +64,15 @@
                     <h3>Ajax</h3>
 
                         <ul>
-                            <li>La méthode Ajax permet d'appeler un serveur de manière asynchrone (voir exemple ci-dessous)</li>
+                            <li>La méthode Ajax permet d'appeler un serveur de manière asynchrone (voir exemple ci-dessous). <em class="gras">Il est très important de toujours penser à ce caractère asynchrone !! Certaines actions doivent être codées dans le .done pour s'assurer qu'elles soient bien effectuées au bon moment.</em></li>
                             <li>On peut transmettre des variables via la méthode ajax en ajoutant <em class="gras">data: {nomVariable1: "hello", nomVariable2: "test"}</em></li>
                             <li>La méthode par défaut est GET (donc on peut ne pas la préciser si on veut utiliser la méthode GET)</li>
                             <li></li>
                             <li></li>
                             <li><em class="gras">dataType</em> est par défaut en Intelligent Guess : il peut deviner tout seul le format du contenu de l'API. Donc on peut ne pas le préciser.</li>
                             <li><em class="gras"></em>Il vaut mieux éviter les boucles while si on attend une réponse qui provient d'une requête asynchrone</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li>Pour sélectionner un élément par son name, on peut faire <em class="gras">"element[name='element-name']"</em>, par ex: "input[name='list-name']"</li>
+                            <li>On peut faire des doubles .find, par ex: <em class="gras">let newName = listElement.find('form').find("input[name='list-name']").val();</em></li>
                             <li><em class="gras"></em></li>
                         </ul>
                     
@@ -121,9 +121,9 @@
                             <li>$pdoStatement->bindParam(":id", $id, PDO::PARAM_INT);</li>
                             <li>$pdoStatement->execute();</li>
                             <li></li>
-                            <li></li>
                             <li>Lorsque les models font eux-même leurs requêtes SQL, on parle d'<em class="gras">Active Record</em></li>
                             <li><em class="gras">Astuce :</em> dans PHPMyAdmin, dans l'onglet insérer, il y a un bouton <em class="gras">Aperçu</em> qui permet de voir le code SQL généré par l'insertion qu'on a effectuée</li>
+                            <li>Lorsque l'on fait une requête SQL pour supprimer une ligne, si la table est liée à une table liante (double foreign key), il faut d'abord supprimer les lignes qui font référence à cette ligne dans la table liante</li>
                         </ul>
     
             </article>
