@@ -252,6 +252,36 @@
                         
             </article>
 
+            <article class="topic">
+
+                <h2>jQuery Ui</h2>
+
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li>Pour utiliser jQuery Ui, il faut ajouter un lien dans le fichier html de l'index, ex:</li>
+                            <li>< script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>Propriété sortable</h3>
+
+                        <ul>
+                            <li><em class="gras">.sortable</em> permet notamment de faire du drag & drop</li>
+                            <li>.sortable contient des <em class="gras">options, methods & events</em></li>
+                            <li>L'option <em class="gras">connectWith</em> permet de définir les autres éléments auxquels ont souhaite connecter l'élément qui va subir un drag and drop</li>
+                            <li>L'event <em class="gras">receive(event, ui)</em> correspond au moment du drop d'un élément dans un autre. Ui correspond à l'élément qui subit le drag and drop. On peut le désigner par ui.item</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article>
+
         </section>
 
     </main>
