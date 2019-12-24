@@ -172,6 +172,7 @@
                             <li><em class="gras">git pull</em> récupérer les modifs d'un repo sur Github</li>
                             <li><em class="gras">git fetch</em> récupérer les modifs d'un repo sur Github, mais ne permet pas de faire de modifs (n'écrase pas la version précédente en local)</li>
                             <li><em class="gras">git checkout nomDeLaBranche</em> permet de basculer sur une branche/récupérer une branche</li>
+                            <li><em class="gras">git checkout -b nomDeLaBranche</em> permet de créer une nouvelle branche et de basculer dessus</li>
                             <li><em class="gras">git branch</em> montre les branches qui existent (l'étoile indique celle sur laquelle je suis)</li>
                             <li><em class="gras">git merge nomDeLaBranche</em> fusionne la branche avec master (il faut d'abord se positionner sur la branche master avec git checkout master)</li>
                             <li><em class="gras">git branch -a</em> permet de voir les branches dispo en local et celles dispo sur Github (en rouge)</li>
