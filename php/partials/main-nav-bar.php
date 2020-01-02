@@ -7,5 +7,6 @@
             <li><a href="saison4.php">Saison 4</a></li>
             <li><a href="saison5.php">Saison 5</a></li>
             <li><a href="saison6.php">Saison 6</a></li>
+            <li><a href="saison7.php">Saison 7</a></li>
         </ul>
     </nav>
