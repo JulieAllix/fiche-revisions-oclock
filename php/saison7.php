@@ -19,21 +19,21 @@
 
             <article class="topic">
 
-                <h2>Lumen</h2>
+                <h2>Démarrer un projet avec Lumen</h2>
 
-                    <h3>Good to know</h3>
+                    <h3>Etapes d'initilaisation</h3>
 
                         <ul>
-                            <li>Lumen est un micro-framework de Laravel</li>
-                            <li>Lumen a son propre router</li>
-                            <li>Dans la doc de Lumen, il faut faire attention à consulter la doc de la bonne version (nous avons installé la v6)</li>
-                            <li>On peut appeler par exemple un header en faisant <em class="gras">< ?= view('layout.header'); ?></em></li>
-                            <li></li>
-                            <li></li>
-                            <li><em class="gras">Blade (https://laravel.com/docs/6.x/blade)</em> permet de simplifier le mélange de code php avec html (mais ajoute une nouvelle syntaxe)</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li>Lumen est un micro-framework de Laravel. Il est dédié aux API.</li>
+                            <li>Pour démarrer un projet avec Lumen, se placer dans le dossier de notre choix avec la console, et taper la commande <em class="gras">composer create-project --prefer-dist laravel/lumen nom-du-projet</em></li>
+                            <li>En accédant au dossier "public", si tout a bien fonctionné, le navigateur doit afficher <em class="gras">Lumen (6.2.0) (Laravel Components ^6.0)</em> (ou autre version, si une autre version a été installée)</li>
+                            <li>Ensuite, créer un repo sur Github et suivre les instructions pour faire le premier push</li>
+                            <li>Puis executer dans le terminal les deux commandes suivantes pour modifier les permissions du dossier storage:</li>
+                            <li><em class="gras">sudo chgrp -R www-data storage</em></li>
+                            <li><em class="gras">sudo chmod -R ug+rwx storage</em></li>
+                            <li>Renseigner <em class="gras">APP_KEY</em> dans le fichier .env</li>
+                            <li>Ouvrir le fichier bootstrap/app.php et décommenter les lignes <em class="gras">$app->withFacades();</em> et <em class="gras">$app->withEloquent();</em></li>
+                            <li>Plus d'infos : <em class="gras"><a href=https://github.com/O-clock-Y/S07-E01-exo-first-lumen-project>étapes d'installation de Lumen - O'clock</a></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
@@ -41,7 +41,34 @@
                             <li><em class="gras"></em></li>
                         </ul>
 
-                    <h3>MVC</h3>
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li>Lumen a son propre router</li>
+                            <li>Dans la doc de Lumen, il faut faire attention à consulter la doc de la bonne version (nous avons installé la v6)</li>
+                            <li>On peut appeler par exemple un header en faisant <em class="gras">< ?= view('layout.header'); ?></em></li>
+                            <li></li>
+                            <li></li>
+                            <li><em class="gras">Blade (https://laravel.com/docs/6.x/blade)</em> permet de simplifier le mélange de code php avec html (mais ajoute une nouvelle syntaxe)</li>
+                            <li>Dans le fichier .env, pour le développement en local, toujours mettre la valeur de <em class="gras">APP_DEBUG sur true</em>. En prod, en revanche, il faudra la passer à false.</li>
+                            <li>En cas d'erreur 403 Forbidden, vérifier si le groupe de notre projet est bien www-data. Sinon, taper la commande <em class="gras">sudo chgrp www-data . -R</em> à la racine du projet</li>
+                            <li><em class="gras">sudo chmod 775/chemin/vers/fichier</em> permet de donner les permission rwx au user et au groupe, et les permissions rx pour 'other'</li>
+                            <li>On redirige vers une page à l'aide de <em class="gras">redirect()->route('nomDeLaRoute');</em></li>
+                            <li><em class="gras">ls -l</em> dans le terminal permet de voir les autorisations des différents utilisateurs</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+
+
+            </article> 
+
+            <article class="topic">
+
+                <h2>MVC</h2>
+
+                    <h3>Nouvelles notions/rappels</h3>
 
                         <ul>
                             <li>Le nom des routes permet de faire un <em class="gras">reverse-routing</em> (générer des url depuis le nom de la route)</li>
@@ -51,29 +78,49 @@
                             <li><em class="gras">return redirect()->route('routeName')</em> permet de rediriger vers une URL en appelant la route qui lui correspond</li>
                             <li><em class="gras">Exemple de route :</em>$router->get('/toto-route',['uses' => 'MainController@toto', 'as'   => 'toto']);</li>
                             <li>Dans l'exemple ci-dessus, @toto désigne <em class="gras">la méthode qui va être appelée</em></li>
-                            <li><em class="gras"></em></li>
+                        </ul>
+                    
+                    <h3></h3>
+
+                        <ul>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul>
-
-                        <h3>DB</h3>
-
-                            <ul>
-                                <li>Pour se connecter à une DB, il suffit d'aller dans le fichier <em class="gras">.env</em> et de remplir les <em class="gras">DB_DATABASE, DB_USERNAME et DB_PASSWORD</em></li>
-                                <li></li>
-                                <li></li>
-                                <li>Pour faire une requête SQL dans une page, il faut penser à faire l'appel <em class="gras">use Illuminate\Support\Facades\DB;</em></li>
-                                <li><em class="gras">$tableList = DB::select('SELECT * FROM `table`');</em> permet de récupérer les données d'une table</li>
-                                <li>On peut aussi faire <em class="gras">$tableList = Table::all();</em> pour récupérer les données d'une table</li>
-                            </ul>
-
-            </article> 
+    
+            </article>
 
 
         
         </section>
 
         <section id="second-section">
+
+            <article class="topic">
+
+                <h2>Base de Données</h2>
+
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li>Pour se connecter à une DB, il suffit d'aller dans le fichier <em class="gras">.env</em> et de remplir les <em class="gras">DB_DATABASE, DB_USERNAME et DB_PASSWORD</em></li>
+                            <li>Dans un envoi de formulaire, faire bien attention à renvoyer quelque chose dans < option value=></li>
+                            <li></li>
+                            <li>Pour faire une requête SQL dans une page, il faut penser à faire l'appel <em class="gras">use Illuminate\Support\Facades\DB;</em></li>
+
+                        </ul>
+                    
+                    <h3>Requêtes SQL</h3>
+
+                        <ul>
+
+                            <li><em class="gras">$tableList = DB::select('SELECT * FROM `table`');</em> permet de récupérer les données d'une table</li>
+                            <li>On peut aussi faire <em class="gras">$tableList = Table::all();</em> pour récupérer les données d'une table</li>
+                            <li>Pour créer des données dans la DB, on instancie d'abord la classe de la table concernée : <em class="gras">$tableName = new TableName;</em></li>
+                            <li>Puis on stocke les données dans des variables, par ex <em class="gras">$tableName->name         = $name;</em></li>
+                            <li>Enfin, on fait un save : <em class="gras">$tableName->save();</em></li>
+                        </ul>
+
+            </article>
 
             <article class="topic">
 
