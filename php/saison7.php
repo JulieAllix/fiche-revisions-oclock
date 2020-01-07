@@ -21,7 +21,7 @@
 
                 <h2>Démarrer un projet avec Lumen</h2>
 
-                    <h3>Etapes d'initilaisation</h3>
+                    <h3>Etapes d'initialisation</h3>
 
                         <ul>
                             <li>Lumen est un micro-framework de Laravel. Il est dédié aux API.</li>
@@ -34,8 +34,9 @@
                             <li>Renseigner <em class="gras">APP_KEY</em> dans le fichier .env</li>
                             <li>Ouvrir le fichier bootstrap/app.php et décommenter les lignes <em class="gras">$app->withFacades();</em> et <em class="gras">$app->withEloquent();</em></li>
                             <li>Plus d'infos : <em class="gras"><a href=https://github.com/O-clock-Y/S07-E01-exo-first-lumen-project>étapes d'installation de Lumen - O'clock</a></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li>Penser à préciser dans le readme.md que ceux qui récupèrent le projet doivent: </li>
+                            <li>- faire un <em class="gras">composer install</em> pour télécharger les dépendances</li>
+                            <li>- affecter les bons droits au dossier storage avec <em class="gras">sudo chgrp -R www-data storage</em> et <em class="gras">sudo chmod -R ug+rwx storage</em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
@@ -55,12 +56,10 @@
                             <li><em class="gras">sudo chmod 775/chemin/vers/fichier</em> permet de donner les permission rwx au user et au groupe, et les permissions rx pour 'other'</li>
                             <li>On redirige vers une page à l'aide de <em class="gras">redirect()->route('nomDeLaRoute');</em></li>
                             <li><em class="gras">ls -l</em> dans le terminal permet de voir les autorisations des différents utilisateurs</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li>La méthode <em class="gras">shuffle</em> permet d'aficher les éléments d'une collection dans un ordre aléatoire</li>
+                            <li><em class="gras">< ?= url('/css/style.css'); ?></em> est un exemple d'url absolue</li>
                             <li><em class="gras"></em></li>
                         </ul>
-
-
 
             </article> 
 
@@ -89,11 +88,32 @@
     
             </article>
 
-
-        
         </section>
 
         <section id="second-section">
+
+            <article class="topic">
+
+            <h2>Divers</h2>
+
+                <h3>Console</h3>
+
+                    <ul>
+                        <li>Gestion des droits: u=user, g=group, o=other; r=read, w=write, x=execute</li>
+                        <li>sudo -> superuser do</li>
+                        <li></li>
+                        <li><em class="gras"></em></li>
+                    </ul>
+
+            
+                <h3>Raccourcis clavier</h3>
+                    <ul>
+                        <li><em class="gras">CTRL + Shift + /</em> = raccourci pour décommenter un bout de code</li>
+                    </ul>
+                    <p></p>
+                    <p></p>
+                
+            </article>
 
             <article class="topic">
 
@@ -106,6 +126,7 @@
                             <li>Dans un envoi de formulaire, faire bien attention à renvoyer quelque chose dans < option value=></li>
                             <li></li>
                             <li>Pour faire une requête SQL dans une page, il faut penser à faire l'appel <em class="gras">use Illuminate\Support\Facades\DB;</em></li>
+                            <li>La méthode <em class="gras">firstWhere()</em> retourne le premier élément d'une collection en fonction d'une clef fournie, ex : <em class="gras">$levelsList->firstWhere('id', $question->levels_id)->name</em> permet de renvoyer le nom d'un niveau (qui provient de la table levels) en fonction de l'id fourni (qui provient de la table question, et qui trouve son équivalent dans la table levels)</li>
 
                         </ul>
                     
@@ -120,29 +141,6 @@
                             <li>Enfin, on fait un save : <em class="gras">$tableName->save();</em></li>
                         </ul>
 
-            </article>
-
-            <article class="topic">
-
-                <h2>Divers</h2>
-
-                    <h3>Console</h3>
-
-                        <ul>
-                            <li>Gestion des droits: u=user, g=group, o=other; r=read, w=write, x=execute</li>
-                            <li>sudo -> superuser do</li>
-                            <li></li>
-                            <li><em class="gras"></em></li>
-                        </ul>
-
-                   
-                    <h3>Raccourcis clavier</h3>
-                        <ul>
-                            <li><em class="gras">CTRL + Shift + /</em> = raccourci pour décommenter un bout de code</li>
-                        </ul>
-                        <p></p>
-                        <p></p>
-                    
             </article>
 
             <article class="topic">
@@ -179,7 +177,18 @@
                             <li><em class="gras">Timestamps:</em> Eloquent s'attend à trouver des colonnes created_at et updated_at</li>
                             <li><em class="gras"></em></li>
                         </ul>
+                    
+                    <h3>Validation</h3>
     
+                        <ul>
+                            <li>Voir exercice videogame, à la racine de S07, fichier Main Controller</li>
+                            <li>Pour utiliser les règles de validation, il fau faire un <em class="gras">use Illuminate\Validation\Rule;</em></li>
+                            <li>On va checker ces règles dans un <em class="gras">try</em>, dans une méthode</li>
+                            <li><em class="gras">'order' => Rule::in([null, 'name', 'editor'])</em> permet de vérifier que le champ 'order' est possède soit les valeurs name, editor ou nul</li>
+                            <li>Dans le catch, on va gérer les exceptions (si la validation n'est pas respectée, on déclenche une erreur). Penser à faire un <em class="gras">use Illuminate\Validation\ValidationException;</em></li>
+                            <li>Pour voir comment gérer la validation en front, voir le fichier <em class="gras">admin.php</em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
             </article>
 
         </section>
@@ -187,3 +196,8 @@
     </main>
 
 <?php require 'partials/footer.php'; ?>
+
+<!-- 
+/quiz/{id:[1-9][0-9]*} vient gérer d'abord les unités, puis les dizaines, centaines, etc 
+php -S localhost:8000 -t public    permet de raccourcir l'url
+-->
