@@ -37,8 +37,8 @@
                             <li>Penser à préciser dans le readme.md que ceux qui récupèrent le projet doivent: </li>
                             <li>- faire un <em class="gras">composer install</em> pour télécharger les dépendances</li>
                             <li>- affecter les bons droits au dossier storage avec <em class="gras">sudo chgrp -R www-data storage</em> et <em class="gras">sudo chmod -R ug+rwx storage</em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li>- créer la bdd et importer les contenus d'exemple<em class="gras"></em></li>
+                            <li>- configurer l'application dans le fichier .env<em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul>
 
@@ -58,10 +58,42 @@
                             <li><em class="gras">ls -l</em> dans le terminal permet de voir les autorisations des différents utilisateurs</li>
                             <li>La méthode <em class="gras">shuffle</em> permet d'aficher les éléments d'une collection dans un ordre aléatoire</li>
                             <li><em class="gras">< ?= url('/css/style.css'); ?></em> est un exemple d'url absolue</li>
-                            <li><em class="gras"></em></li>
+                            <li><em class="gras">->count()</em> permet de compter les éléments d'une collection</li>
                         </ul>
 
             </article> 
+
+            <article class="topic">
+
+                <h2>Relationships</h2>
+
+                    <h3>Création des liens</h3>
+
+                        <ul>
+                            <li>Les connections entre les tables se font<em class="gras"> au niveau du Model</em>:</li>
+                            <li>- on crée une fonction portant le nom de la table qu'on veut relier à celle du modèle</li>
+                            <li>- on précise dedans le type de relation <em class="gras">(ex: hasMany, belongsTo, belongsToMany)</em></li>
+                            <li>- on précise le nom de la colonne s'il ne respecte pas les conventions de Lumen</li>
+                            <li>ex: <em class="gras">return $this->hasMany('App\Models\Answer', 'questions_id');</em></li>
+                            <li>Exemple de relation <em class="gras">many to many</em>:</li>
+                            <p>return $this->belongsToMany(</p>
+                            <p>'App\Models\Tag',</p>
+                            <p>'quizzes_has_tags', // table intermédiaire</p>
+                            <p>'quizzes_id', // clef étrangère de l'élément qu'on veut récupérer</p>
+                            <p>'tags_id'</p>
+                            <p>);</p>
+                            <li>voir atelier oQuiz pour plus de détails et d'exemples</li>
+                        </ul>
+                    
+                    <h3>Utilisation des liens</h3>
+
+                        <ul>
+                            <li>Soit $table la variable renvoyant les données de la table du modèle M (au sein duquel le lien a été créé), method la méthode que l'on a créée dans M, methodTable2 une méthode créée dans le modèle de l'autre table à laquelle on souhaite accéder:</li>
+                            <li>Pour utiliser un lien entre deux bases, on peut faire <em class="gras">$table->method->methodTable2()</em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article>
 
             <article class="topic">
 
@@ -102,7 +134,7 @@
                         <li>Gestion des droits: u=user, g=group, o=other; r=read, w=write, x=execute</li>
                         <li>sudo -> superuser do</li>
                         <li></li>
-                        <li><em class="gras"></em></li>
+                        <li><em class="gras">uuidgen</em> dans le terminal permet de générer une clef de cryptage aléatoire</li>
                     </ul>
 
             
@@ -127,6 +159,10 @@
                             <li></li>
                             <li>Pour faire une requête SQL dans une page, il faut penser à faire l'appel <em class="gras">use Illuminate\Support\Facades\DB;</em></li>
                             <li>La méthode <em class="gras">firstWhere()</em> retourne le premier élément d'une collection en fonction d'une clef fournie, ex : <em class="gras">$levelsList->firstWhere('id', $question->levels_id)->name</em> permet de renvoyer le nom d'un niveau (qui provient de la table levels) en fonction de l'id fourni (qui provient de la table question, et qui trouve son équivalent dans la table levels)</li>
+                            <li></li>
+                            <li>Exemple de lien vers une page à id dynamique: <em class="gras">< a href='< ?= route('quiz', ['id' => $quiz->id]) ?>'>< ?= $quiz->title ?></a></em></li>
+                            <li><em class="gras"></em></li>
+
 
                         </ul>
                     
