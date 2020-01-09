@@ -59,6 +59,8 @@
                             <li>La méthode <em class="gras">shuffle</em> permet d'aficher les éléments d'une collection dans un ordre aléatoire</li>
                             <li><em class="gras">< ?= url('/css/style.css'); ?></em> est un exemple d'url absolue</li>
                             <li><em class="gras">->count()</em> permet de compter les éléments d'une collection</li>
+                            <li><em class="gras">->shuffle()</em> permet de mélanger l'ordre des éléments d'une collection de façon aléatoire à chaque fois qu'on actualise la page</li>
+                            
                         </ul>
 
             </article> 
@@ -223,8 +225,37 @@
                             <li><em class="gras">'order' => Rule::in([null, 'name', 'editor'])</em> permet de vérifier que le champ 'order' est possède soit les valeurs name, editor ou nul</li>
                             <li>Dans le catch, on va gérer les exceptions (si la validation n'est pas respectée, on déclenche une erreur). Penser à faire un <em class="gras">use Illuminate\Validation\ValidationException;</em></li>
                             <li>Pour voir comment gérer la validation en front, voir le fichier <em class="gras">admin.php</em></li>
+                            <li><em class="gras">unique:app_users,email</em> permet de vérifier que l'adresse mail n'est pas déjà présente dans la DB (ici, 'app_users' est le nom de la table, 'email' est le nom de la colonne)</li>
+                            <li>Lumen a son propre service de hashing, <em class="gras">Hash::make($password)</em> (penser à importer 'use Illuminate\Support\Facades\Hash;')</li>
+                            <li>Pour gérer la vérification de saisie d'un mot de passe (deuxième champ password du formulaire), penser à mettre <em class="gras">"password_confirmation"</em> comme name pour l'input</li>
+                        </ul>
+            </article>
+
+            <article class="topic">
+
+                <h2>Authentification</h2>
+
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li>L'authentification n'est plus prévue dans Lumen, il faut la recréer:</li>
+                            <li><a href='https://github.com/O-clock-Y/S07-E03-atelier-oquiz/blob/master/docs/auth.md'>Cliquer ici pour accéder à un squelette de classe utilitaire à réutiliser</a></li>
+                            <li>Pour plus de détails, voir les exercices sur videogame et sur oquiz</li>
+                            <li></li>
+                            <li></li>
                             <li><em class="gras"></em></li>
                         </ul>
+                    
+                    <h3></h3>
+
+                        <ul>
+                            <li>On initialise la session avec <em class="gras">session_start();</em> dans index.php</li>
+                            <li>Dans App, créer un dossier <em class="gras">Utils</em> ainsi qu'un fichier <em class="gras">UserSession.php</em> qui contiendra la classe utilitaire <em class="gras">UserSession</em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
             </article>
 
         </section>

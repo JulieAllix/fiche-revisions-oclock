@@ -130,6 +130,10 @@ header, #wrapper {
     width: 70%;
 }
 
+a:hover {
+    font-weight: bold;
+}
+
 /* Header */
 
 header {
