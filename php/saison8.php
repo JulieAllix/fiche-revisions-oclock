@@ -19,7 +19,7 @@
 
             <article class="topic">
 
-                <h2>Créeation d'un thème</h2>
+                <h2>Création d'un thème</h2>
 
                     <h3>Good to know</h3>
 
@@ -57,6 +57,27 @@
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>Dynamiser un article</h3>
+
+                        <ul>
+                            <li>Pour dynamiser un article, il faut l'encadrer de la super boucle :<em class="gras"></em></li>
+                            <li><em class="gras">< ?php</em></li>
+                            <li><em class="gras">if ( have_posts() ):</em></li>
+                            <li><em class="gras">while ( have_posts() ) :</em></li>
+                            <li><em class="gras">the_post();</em></li>
+                            <li><em class="gras">?></em></li>
+                            <li><em class="gras">< ?php endwhile;</em></li>
+                            <li><em class="gras">endif; ?></em></li>
+                            <li>Dans l'article, on peut utiliser des fonctions comme <em class="gras">< ?php the_title(); ?> (the_author, the_date, etc)</em> pour dynamiser le contenu</li>
+                            <li><em class="gras">the_quelquechose</em> fait un echo, tandis que <em class="gras">get_the_quelquechose</em> fait un return, donc il faut adapter la balise php entrante en fonction</li>
+                            <li><em class="gras">home_url();</em> permet de dynamiser l'url de la homepage</li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
