@@ -27,7 +27,7 @@
                             <li>Le langage commun à js et php est le <em class="gras">json</em></li>
                             <li>Ajax, c'est du js qui communique avec un serveur en asynchrone</li>
                             <li><em class="gras">() => {}</em> est l'équivalent de function(){}</li>
-                            <li><em class="gras">${variable}</em> permet d'insérer une variable js dans une chaîne de caractères</li>
+                            <li><em class="gras">${variable}</em> permet d'insérer une variable js dans une chaîne de caractères. <em class="gras">/!\ Cela ne fonctionne que si on encadre la chaîne de caractères par des backtick (` et non ')</em></li>
                             <li><em class="gras">$(app.init)</em> permet de lancer notre script à la fin du chargement du DOM</li>
                             <li>Quand on appelle une fonction via un .on('event', function), on ne met pas de () après la function, car on n'appelle pas la function tout de suite, on ne l'appelle que lorsque l'event se produit</li>
                             <li><em class="gras"></em></li>
