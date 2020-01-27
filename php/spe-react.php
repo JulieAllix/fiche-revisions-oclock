@@ -25,7 +25,7 @@
 
                         <ul>
                             <li><em class="gras">Babel</em> permet de rendre un code rétro-compatible</li>
-                            <li>L'instruction<em class="gras">debugger</em> permet de débugger en pas à pas (aller dans Inspecter/Sources sur Chrome)</li>
+                            <li>L'instruction <em class="gras">debugger</em> permet de débugger en pas à pas (aller dans Inspecter/Sources sur Chrome)</li>
                             <li>Les <em class="gras">littéraux de gabarit (``)</em> permettent de sauter des lignes et d'interpréter directement du js encadré dans <em class="gras">${}</em></li>
                             <li>Ecrire directement une condition renvoie un booléen, ex: <em class="gras">36 < 50 renverra true</em></li>
                             <li>Attention ! Selon la fonction qu'on utilise pour récupérer un élément du DOM, <em class="gras">le type de ce qu'on récupère peut être différent</em>. Penser à toujours faire des console.log.</li>
@@ -33,6 +33,9 @@
                             <li><em class="gras">document.querySelectorAll</em> permet de sélectionner tous les éléments d'un querySelector donné</li>
                             <li><em class="gras">element.style.display</em> permet de jouer sur l'affichage d'un élément (de none à block par ex)</li>
                             <li><em class="gras">setTimeout(function () { do sthg }, 1000)</em> permet de déclancher des actions au bout d'une seconde</li>
+                            <li>Pour les tableaux et les objets, quand on fait <em class="gras">variable2 = variable1</em>, si on fait une modif à variable2, elle s'applique à variable1 : on a fait une copie du pointeur (stockage par référence)</li>
+                            <li><em class="gras">::before</em> avec un content:'' permet par exemple d'ajouter un élément de déco avant un autre élément</li>
+                            <li><em class="gras"></em></li>
                         </ul>
 
                     <h3>Les types de variables</h3>
@@ -156,21 +159,78 @@
 
             <article class="topic">
 
-                <h2></h2>
+                <h2>NPM</h2>
 
-                    <h3></h3>
-
-                        <ul>
-                            <li><em class="gras"></em></li>
-                        </ul>
-                    
-                    <h3></h3>
+                    <h3>Good to know</h3>
 
                         <ul>
+                            <li><em class="gras">yarn</em> est une version améliorée de npm (+ rapide, + secure, +joli)</li>
+                            <li><em class="gras">npm (node package manager)</em> est l'équivalent de composer pour js</li>
+                            <li><em class="gras">Webpack</em> est un outil de build. Il modularise (crée un module pour chaque fichier js utilisé dans le dossier src du projet), transpile (transforme du code en faisant appel à des outils, type Babel) et compresse notre code. Il gère tous les assets (js, styles, img, etc)</li>
+                            <li><em class="gras">Babel</em> rend compatible du code toute nouvelle génération vers du code plus ancien. Il convertit égaleemnt le JSx (langage de React) en Js</li>
+                            <li><em class="gras">ESLint</em> analyse le code, fournit des conseils, etc</li>
+                            <li><em class="gras">node_modules</em> est un équivalent du dossier vendor de composer. Il faut le mettre en git ignore.</li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>Commandes utiles</h3>
+
+                        <ul>
+                            <li><em class="gras">npm init</em> crée un fichier package.json</li>
+                            <li><em class="gras">npm install react</em> installe le package nommé "react" dans package.json</li>
+                            <li><em class="gras">npm uninstall react</em></li>
+                            <li><em class="gras">npm install react --save</em> installe react et le rajoute aux dépendances dans package.json</li>
+                            <li><em class="gras">npm install webpack --save-dev</em> installe le webpack et le rajoute aux dépendances de dev dans package.json</li>
+                            <li><em class="gras">yarn</em> est la première commande à faire sur un projet React</li>
+                            <li><em class="gras">yarn build</em> optimise le code pour la prod</li>
+                            <li><em class="gras">yarn start</em> lance le serveur</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul>
-    
+
+            </article>
+
+            <article class="topic">
+
+                <h2>Découverte de React</h2>
+
+                    <h3>Export/import</h3>
+
+                        <ul>
+                            <li>On peut faire des exports par défaut avec <em class="gras">export default functionName;</em></li>
+                            <li>On les importe avec <em class="gras">import leNomQueJeVeux from './fichierdOrigine.js';</em></li>
+                            <li>On peut faire des exports nommés avec <em class="gras">export const coucou = () => 'coucou';</em> ou encore <em class="gras"> export { coucou, salut };</em></li>
+                            <li>On les importe avec <em class="gras">import { coucou, salut } from './hello.js';</em></li>
+                            <li>On importe tout avec <em class="gras">import hello, { coucou, salut } from './hello';</em></li>
+                            <li><em class="gras">import React from 'react';</em> et <em class="gras">import { render } from 'react-dom';</em> permettent d'appliquer au DOM le DOM de React</li>
+                            <li>Quand on utilise des props, il faut penser à faire un <em class="gras">import PropTypes from 'prop-types';</em> dans l'index.js de notre composant pour s'assurer que nos props aient bien le bon type de données</li>
+                            <li>Puis il faut faire, par exemple, un <em class="gras">Composant.proptypes = {</em></li>
+                            <li><em class="gras">propertyName: PropTypes.string.isRequired,</em></li>
+                            <li><em class="gras">}</em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li></li>
+                        </ul>
+
+                
+                    <h3>Démarrer un projet</h3>
+
+                        <ul>
+                            <li>Une fois avoir installé le modèle React dans notre arborescence de fichiers, il reste deux commandes à faire pour installer React sur un nouveau projet.<em class="gras"></em></li>
+                            <li>Dans le cas où le modèle aura été placé dans un dossier 'spé-react', et que le projet aura été placé dans spé-react/eX, les commandes à faire au niveau du projet sont :<em class="gras"></em></li>
+                            <li><em class="gras">cp -n ../../React-modele/{.*,*} .</em></li>
+                            <li><em class="gras">cp -rn ../../React-modele/{src,config,public} .</em></li>
+                            <li><em class="gras">yarn</em></li>
+                            <li><em class="gras">yarn build</em> (facultatif)</li>
+                            <li><em class="gras">yarn start</em></li>
+                            <li>Un <em class="gras">composant</em> est une fonction qui retourne du JSx (js qui ressemble à du html)</li>
+                            <li>Dans les itérations, l'élément qui subit l'itération doit recevoir une prop spéciale : <em class="gras">key={...}</em> qui doit contenir qch d'unique entre les différents éléments qui subissent la boucle</li>
+                            <li><em class="gras">yarn add prop-types</em> permet d'utiliser les prop-types</li>
+                        </ul>
+                
             </article>
 
         </section>
