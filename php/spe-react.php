@@ -131,12 +131,6 @@
                     
             </article>
 
-
-        
-        </section>
-
-        <section id="second-section">
-
             <article class="topic">
 
                 <h2>Manipulation du DOM</h2>
@@ -149,13 +143,12 @@
                             <li><em class="gras">app.variable (ou app.element)</em> permet d'accéder à une variable/élément dispo dans tout app (qui aura été définie à la racine de app)</li>
                             <li>On peut passer un <em class="gras">objet de données</em> en paramètre quand on appelle une fonction</li>
                         </ul>
-
-                   
-                    <h3></h3>
-                        <p></p>
-                        <p></p>
-                    
+    
             </article>
+
+        </section>
+
+        <section id="second-section">
 
             <article class="topic">
 
@@ -196,6 +189,21 @@
             <article class="topic">
 
                 <h2>Découverte de React</h2>
+                
+                    <h3>Démarrer un projet</h3>
+
+                        <ul>
+                            <li>Une fois avoir installé le modèle React dans notre arborescence de fichiers, il reste deux commandes à faire pour installer React sur un nouveau projet.<em class="gras"></em></li>
+                            <li>Dans le cas où le modèle aura été placé dans un dossier 'spé-react', et que le projet aura été placé dans spé-react/eX, les commandes à faire au niveau du projet sont :<em class="gras"></em></li>
+                            <li><em class="gras">cp -n ../../React-modele/{.*,*} .</em></li>
+                            <li><em class="gras">cp -rn ../../React-modele/{src,config,public} .</em></li>
+                            <li><em class="gras">yarn</em></li>
+                            <li><em class="gras">yarn build</em> (facultatif)</li>
+                            <li><em class="gras">yarn start</em></li>
+                            <li>Un <em class="gras">composant</em> est une fonction qui retourne du JSx (js qui ressemble à du html)</li>
+                            <li>Dans les itérations, l'élément qui subit l'itération doit recevoir une prop spéciale : <em class="gras">key={...}</em> qui doit contenir qch d'unique entre les différents éléments qui subissent la boucle</li>
+                            <li><em class="gras">yarn add prop-types</em> permet d'utiliser les prop-types</li>
+                        </ul>
 
                     <h3>Export/import</h3>
 
@@ -215,22 +223,39 @@
                             <li></li>
                         </ul>
 
-                
-                    <h3>Démarrer un projet</h3>
+                    <h3>CSS : styled components</h3>
 
                         <ul>
-                            <li>Une fois avoir installé le modèle React dans notre arborescence de fichiers, il reste deux commandes à faire pour installer React sur un nouveau projet.<em class="gras"></em></li>
-                            <li>Dans le cas où le modèle aura été placé dans un dossier 'spé-react', et que le projet aura été placé dans spé-react/eX, les commandes à faire au niveau du projet sont :<em class="gras"></em></li>
-                            <li><em class="gras">cp -n ../../React-modele/{.*,*} .</em></li>
-                            <li><em class="gras">cp -rn ../../React-modele/{src,config,public} .</em></li>
-                            <li><em class="gras">yarn</em></li>
-                            <li><em class="gras">yarn build</em> (facultatif)</li>
-                            <li><em class="gras">yarn start</em></li>
-                            <li>Un <em class="gras">composant</em> est une fonction qui retourne du JSx (js qui ressemble à du html)</li>
-                            <li>Dans les itérations, l'élément qui subit l'itération doit recevoir une prop spéciale : <em class="gras">key={...}</em> qui doit contenir qch d'unique entre les différents éléments qui subissent la boucle</li>
-                            <li><em class="gras">yarn add prop-types</em> permet d'utiliser les prop-types</li>
+                            <li><em class="gras">yarn add styled-components</em> permet d'installer styled components</li>
+                            <li><em class="gras">import styled from 'styled-components';</em> permet d'importer styled-components dans l'index.js racine ainsi que dans les fichiers ComposantStyled.js</li>
+                            <li>On peut créer nos variables styled components dans <em class="gras">src/styles/theme</em></li>
+                            <li>Les fichiers <em class="gras">ComposantStyled.js</em> permettent de définir le style du composant qui sera placé lui-même dans un composant. On peut réutiliser les variables définies dans theme.</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
                         </ul>
-                
+
+                    <h3>Props</h3>
+
+                        <ul>
+                            <li><em class="gras">{...post}</em> est un exemple de spread operator: il déverse le contenu de l'objet contenu en posts dans post (voir correction du challenge e4 rangé en e5)</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul> 
+
+                    <h3>useState</h3>
+
+                        <ul>
+                            <li>Pour utiliser useState, il faut appeler : <em class="gras">import React, { useState } from 'react';</em></li>
+                            <li><em class="gras">const [selectedCategory, setSelectedCategory] = useState('Autre')</em>: ici on crée une variable qui gère la lecture de la donnée du state (selectedCategory) et une qui gère la modification de la donnée (setSelectedCategory). 'Autre' est la valeur initiale.</li>
+                            <li><em class="gras">const selectedPosts = postsData.filter((post) => post.category === selectedCategory)</em> : fonction qui filtre sur les posts dont la catégorie est `selectedCategory`</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul> 
+
             </article>
 
         </section>
