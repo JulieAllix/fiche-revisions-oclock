@@ -146,10 +146,6 @@
     
             </article>
 
-        </section>
-
-        <section id="second-section">
-
             <article class="topic">
 
                 <h2>NPM</h2>
@@ -185,6 +181,10 @@
                         </ul>
 
             </article>
+
+        </section>
+
+        <section id="second-section">
 
             <article class="topic">
 
@@ -234,27 +234,68 @@
                             <li><em class="gras"></em></li>
                         </ul>
 
-                    <h3>Props</h3>
+                    <h3>Props & Selectors</h3>
 
                         <ul>
                             <li><em class="gras">{...post}</em> est un exemple de spread operator: il déverse le contenu de l'objet contenu en posts dans post (voir correction du challenge e4 rangé en e5)</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li>On peut créer des fonctions dans des fichiers qu'on rangera dans <em class="gras">src/selectors/</em></li>
+                            <li>On les importe avec un <em class="gras">import { nomDeLaFonction } from 'src/selectors/posts';</em></li>
+                            <li>Puis on les appelle comme une fonction classique<em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul> 
 
-                    <h3>useState</h3>
+            </article>
+
+            <article class="topic">
+
+                <h2>Use & Axios</h2>
+
+                    <h3>UseState</h3>
 
                         <ul>
-                            <li>Pour utiliser useState, il faut appeler : <em class="gras">import React, { useState } from 'react';</em></li>
-                            <li><em class="gras">const [selectedCategory, setSelectedCategory] = useState('Autre')</em>: ici on crée une variable qui gère la lecture de la donnée du state (selectedCategory) et une qui gère la modification de la donnée (setSelectedCategory). 'Autre' est la valeur initiale.</li>
+                            <li><em class="gras">useState</em> permet de définir des données. Et si ces données changent, React va refaire le rendu du composant</li>
+                            <li>Pour utiliser useState, il faut appeler le hook : <em class="gras">import React, { useState } from 'react';</em></li>
+                            <li><em class="gras">const [donnée, modifierLaDonnée] = useState('valeur de départ')</em>: ici on crée une variable qui gère la lecture de la donnée du state (donnée) et une qui gère la modification de la donnée (modifierLaDonnée).</li>
                             <li><em class="gras">const selectedPosts = postsData.filter((post) => post.category === selectedCategory)</em> : fonction qui filtre sur les posts dont la catégorie est `selectedCategory`</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>UseEffect</h3>
+
+                        <ul>
+                            <li><em class="gras">useEffect</em> permet d'exécuter une fonction au chargement d'un composant donné. Attention: il ne peut pas être utilisé avant un useState !</li>
+                            <li>Pour qu'un useEffect se charge qu'au chargement initial, on lui passe un tableau vide, ex: <em class="gras">useEffect(() => {loadPosts();}, []);</em></li>
                             <li><em class="gras"></em></li>
                         </ul> 
+
+                    <h3>Axios et ajax</h3>
+
+                        <ul>
+                            <li><em class="gras">Axios</em> permet de faire des requêtes Ajax</li>
+                            <li><em class="gras">yarn add axios</em> permet d'installer axios</li>
+                            <li>Pour utiliser axios, on fait <em class="gras">import axios from 'axios';</em></li>
+                            <li><em class="gras">Exemple de requête axios:</em></li>
+                            <p>axios.get('https://oclock-open-apis.now.sh/api/blog/posts')</p>
+                            <p>.then((response) => {</p>
+                            <p>setPosts(response.data);</p>
+                            <p>})</p>
+                            <p>.catch((error) => {</p>
+                            <p>console.error(error);</p>
+                            <p>});</p>
+                            <li><em class="gras">.then</em> gère le comportement en cas de succès</li>
+                            <li><em class="gras">.catch</em> gère le comportement en cas d'erreur</li>
+                            <li><em class="gras">dangerouslySetInnerHTML</em> peut être utilisé pour lire le code html renvoyé dans le json d'une API dont on récupère la data avec axios. Mais il faut le nettoyer avec DOMPurify.sanitize avant.</li>
+                            <li><em class="gras">npm install dompurify --save</em> permet d'installer DOMPurify</li>
+                            <li><em class="gras">import DOMPurify from 'dompurify';</em> permet d'importer DOMPurify</li>
+                            <li><em class="gras">ALLOWED_TAGS: ['em', 'strong']</em> permet de n'autoriser que les balises em et strong dans un bout de code nettoyé</li>
+                            <li><em class="gras">const cleanCode = DOMPurify.sanitize(excerpt, configSanitize);</em> permet de nettoyer excerpt en utilisant la fonction configSanitize (fonction à créer soi-même)</li>
+                            <li><em class="gras">return {__html: cleanCode,};</em> permet de renvoyer du html nettoyé</li>
+                            <li><em class="gras">dangerouslySetInnerHTML={createMarkup()}</em> permet de renvoyer du html propre en appelant la fonction createMarkup, à créer soi-même</li>
+                            <li>Pour plus de détails, voir e6 de la spé<em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
 
             </article>
 
