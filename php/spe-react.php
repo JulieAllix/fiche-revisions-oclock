@@ -265,8 +265,18 @@
                         <ul>
                             <li><em class="gras">useEffect</em> permet d'exécuter une fonction au chargement d'un composant donné. Attention: il ne peut pas être utilisé avant un useState !</li>
                             <li>Pour qu'un useEffect se charge qu'au chargement initial, on lui passe un tableau vide, ex: <em class="gras">useEffect(() => {loadPosts();}, []);</em></li>
+                            <li><em class="gras">useEffect(() => {}, [selectedCategory])</em> permet de faire en sorte que le useEffect se charge au moment où selectedCategory change</li>
                             <li><em class="gras"></em></li>
+                            <li>Exemple de façon de trier la data d'une API à l'aide de map: <em class="gras">setCategories(response.data.map((category) => category.label))</em></li>
                         </ul> 
+                    
+                    <h3>UseParams</h3>
+
+                        <ul>
+                            <li>Les <em class="gras">params</em> décrivent les segments dynamiques de l'url</li>
+                            <li><em class="gras">const { slug } = useParams();</em> permet de récupérer le paramètre (partie dynamique) capturé par la route</li>
+                            <li><em class="gras"></em></li>
+                        </ul>
 
                     <h3>Axios et ajax</h3>
 
@@ -293,6 +303,70 @@
                             <li><em class="gras">dangerouslySetInnerHTML={createMarkup()}</em> permet de renvoyer du html propre en appelant la fonction createMarkup, à créer soi-même</li>
                             <li>Pour plus de détails, voir e6 de la spé<em class="gras"></em></li>
                             <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>Les vues conditionnelles</h3>
+
+                        <ul>
+                            <li><em class="gras">{posts.length === 0 && < div>chargement...< /div>}</em> permet d'afficher la div chargement si la longueur du post est égale à zéro</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>  
+                        </ul>
+
+            </article>
+
+            <article class="topic">
+
+                <h2>React Router</h2>
+
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li>React Router permet de <em class="gras">faciliter la navigation en créant des url, en conservant un historique de navigation, etc</em></li>
+                            <li>Il s'installe avec <em class="gras">yarn add react-router-dom</em></li>
+                            <li><em class="gras">import { BrowserRouter } from 'react-router-dom';</em> est à placer dans le fichier racine index.js, celui qui contient le render qui déclenche le contenu React</li> 
+                            <li>Puis on va entourer < App /> de la balise <em class="gras">< BrowserRouter></em> afin de transmettre les infos utiles à react-router-dom</li> 
+                            <li>Avec <em class="gras">Link et Route</em> on peut mettre en place une navigation: Link va gérer l'url, et Route va gérer l'affichage.</li>  
+                            <li><em class="gras"></em></li>  
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>  
+                        </ul>
+
+                    <h3>Link</h3>
+
+                        <ul>
+                            <li><em class="gras">Link</em> injecte dans l'url le bout de route qui nous manque</li>
+                            <li>L'import se fait avec <em class="gras">import { Link } from 'react-router-dom';</em></li>
+                            <li>On va encadrer la partie où l'on veut appliquer le lien à l'aide de la balise Link, par ex: <em class="gras">< Link to={`/post/${slug}`}></em></li>
+                            <li><em class="gras">NavLink</em> permet en plus de spécifier plusieurs props notamment pour ajouter des attributs de style à l'élément rendu. La classe attribuée par défaut dans un NavLink est 'active'.</li>
+                        </ul>
+
+                    <h3>Route</h3>
+
+                        <ul>
+                            <li>On place des balises <em class="gras">< Route> autour des composants que l'on souhaite afficher pour un path donné</em></li>
+                            <li>Exemple de balise Route: <em class="gras">< Route exact path={category.route} key={category.route}></em></li>
+                            <li>On peut aussi définir le path avec un paramètre d'url dynamique: <em class="gras">< Route path="/post/:slug"></em></li>
+                            <li>L'import se fait avec <em class="gras">import { Route } from 'react-router-dom';</em></li>
+                            <li>Le mot clef <em class="gras">exact</em> permet de ne cibler que le chemin exact d'une route, pas les chemins qui contiennent une partie similaire à un autre (ex : path '/' et path '/React' ont '/' en commun</li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+                    
+                    <h3>Switch</h3>
+
+                        <ul>
+                            <li><em class="gras">Switch</em> permet de définir une route par défaut si l'url ne matche aucune route, car la première route qui matche est affichée</li>
+                            <li>L'import se fait avec <em class="gras">import { Switch } from 'react-router-dom';</em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>Redirect</h3>
+
+                        <ul>
+                            <li>Redirect permet de <em class="gras">rediriger une url vers une autre</em></li>
+                            <li>L'import se fait avec <em class="gras">import { Redirect } from 'react-router-dom';</em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul>
