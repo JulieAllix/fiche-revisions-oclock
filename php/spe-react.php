@@ -36,6 +36,9 @@
                             <li>Pour les tableaux et les objets, quand on fait <em class="gras">variable2 = variable1</em>, si on fait une modif à variable2, elle s'applique à variable1 : on a fait une copie du pointeur (stockage par référence)</li>
                             <li><em class="gras">::before</em> avec un content:'' permet par exemple d'ajouter un élément de déco avant un autre élément</li>
                             <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
                         </ul>
 
                     <h3>Les types de variables</h3>
@@ -327,7 +330,7 @@
                             <li>React Router permet de <em class="gras">faciliter la navigation en créant des url, en conservant un historique de navigation, etc</em></li>
                             <li>Il s'installe avec <em class="gras">yarn add react-router-dom</em></li>
                             <li><em class="gras">import { BrowserRouter } from 'react-router-dom';</em> est à placer dans le fichier racine index.js, celui qui contient le render qui déclenche le contenu React</li> 
-                            <li>Puis on va entourer < App /> de la balise <em class="gras">< BrowserRouter></em> afin de transmettre les infos utiles à react-router-dom</li> 
+                            <li>Puis, dans ce même fichier, on va entourer < App /> de la balise <em class="gras">< BrowserRouter></em> afin de transmettre les infos utiles à react-router-dom</li> 
                             <li>Avec <em class="gras">Link et Route</em> on peut mettre en place une navigation: Link va gérer l'url, et Route va gérer l'affichage.</li>  
                             <li><em class="gras"></em></li>  
                             <li><em class="gras"></em></li>
@@ -350,7 +353,7 @@
                             <li>Exemple de balise Route: <em class="gras">< Route exact path={category.route} key={category.route}></em></li>
                             <li>On peut aussi définir le path avec un paramètre d'url dynamique: <em class="gras">< Route path="/post/:slug"></em></li>
                             <li>L'import se fait avec <em class="gras">import { Route } from 'react-router-dom';</em></li>
-                            <li>Le mot clef <em class="gras">exact</em> permet de ne cibler que le chemin exact d'une route, pas les chemins qui contiennent une partie similaire à un autre (ex : path '/' et path '/React' ont '/' en commun</li>
+                            <li>Le mot clef <em class="gras">exact</em> permet de ne cibler que le chemin exact d'une route, pas les chemins qui contiennent une partie similaire à un autre (ex : path '/' et path '/React' ont '/' en commun). Cependant il s'utilise uniquement avec des NavLink, pas avec des Link.</li>
                             <li><em class="gras"></em></li>
                         </ul>
                     
@@ -367,6 +370,38 @@
                         <ul>
                             <li>Redirect permet de <em class="gras">rediriger une url vers une autre</em></li>
                             <li>L'import se fait avec <em class="gras">import { Redirect } from 'react-router-dom';</em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article>
+
+            <article class="topic">
+
+                <h2>Champs contrôlés</h2>
+
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li>En Jsx, on relie un label à son input avec <em class="gras">htmlFor="name"</em> dans le label et <em class="gras">id="name"</em> dans l'input</li>
+                            <li>On peut utiliser des useState en paramètres d'un composant, exemple: <em class="gras">const Field = ({ value, changeValue }) => {</em></li>
+                            <li>Ainsi, on peut par exemple modifier les données définissant l'input de la manière suivante:<em class="gras">value={value}</em> et <em class="gras">onChange={handleChange}</em></li>
+                            <li><em class="gras">onChange={function}</em> permet d'appeler une fonction à chaque modification du champ d'un formulaire</li>
+                            <li>Dans cet exemple, changeValue sera de type fonction dans la définition des PropTypes: <em class="gras">changeValue: PropTypes.func.isRequired</em></li>
+                            <li>On appellera donc le composant de la manière suivante: <em class="gras">< Field value={email} changeValue={setEmail} /></em></li>
+                            <li>Attention : il vaut mieux placer les useState le plus haut possible, si possible dans App. Sinon, <em class="gras">à chaque changement de vue, il faudra recréer des useState</em></li>
+                            <li><em class="gras">setFields({...fields, [name]: value,});</em> permet de déverser l'objet actuel fields et de changer la valeur du champ</li>
+                            <li><em class="gras">Field.defaultProps = {value: '',};</em> permet de définir une valeur par défaut pour un props </li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>Etapes</h3>
+
+                        <ul>
+                            <li><em class="gras">Structure de base - identification des vues</em></li>
+                            <li><em class="gras">Définition du Theme et AppStyled</em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul>

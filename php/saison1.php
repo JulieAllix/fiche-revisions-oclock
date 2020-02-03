@@ -77,7 +77,7 @@
 
                         <ul>
                             <li><em class="gras">padding</em>: permet de définir l'espacement interne (le gras du corps)</li>
-                            <li><em class="gras">border</em>: permet de définir la bordure (la peau du corps)</li>
+                            <li><em class="gras">border</em>: permet de définir la bordure (la peau du corps). Astuce : mettre une couleur 'transparent' permet de ne pas tout décaler dans la mise en page lorsque l'on souhaite ajouter une bordure au hover</li>
                             <li><em class="gras">margin</em>: permet de définir l'espacement externe (l'espace interpersonnel). On peut gérer les quatre marges en même temps --> margin: haut droite bas gauche. Si on ne met que 3 valeurs, la margin gauche récupère la valeur de la droite; si on n'en met que 2, haut = bas et gauche = droite.</li>
                             <li><em class="gras">box-sizing: border-box</em>: indique que la taille définie s'applique sur tout, padding compris</li>
                         </ul>
