@@ -35,10 +35,19 @@
                             <li><em class="gras">setTimeout(function () { do sthg }, 1000)</em> permet de déclancher des actions au bout d'une seconde</li>
                             <li>Pour les tableaux et les objets, quand on fait <em class="gras">variable2 = variable1</em>, si on fait une modif à variable2, elle s'applique à variable1 : on a fait une copie du pointeur (stockage par référence)</li>
                             <li><em class="gras">::before</em> avec un content:'' permet par exemple d'ajouter un élément de déco avant un autre élément</li>
+                            <li>Dans du JSx, il est plus facile d'utiliser des conditions ternaires plutôt que des if, ou alors, il faut faire les traitements avant le return pour conserver un JSx propre<em class="gras"></em></li>
+                            <li><em class="gras">{10 < 100 && "ok"}</em> permet de faire : si 10 < 100, afficher 'ok'</li>
+                            <li>{isTrue && 'ok'}<em class="gras"> fonctionne aussi</em></li>
+                            <li>{!isTrue && 'nope'}<em class="gras"> ferait un équivalent du else</em></li>
+                            <li>Quand on est dzns un map, <em class="gras">il faut nécessairement définir une key</em></li>
+                            <li>Pour manipuler un objet, <em class="gras">il faut en créer un nouveau pourle remplacer, pas l'écraser</em></li>
+                            <li><em class="gras">yarn add react-feather</em> permet d'installer la librairie d'icônes https://github.com/feathericons/react-feather</li>
+                            <li><em class="gras">const highestId = Math.max(...tasks.map((task) => task.id));</em> est un exemple de générateur d'id</li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
+                            
                         </ul>
 
                     <h3>Les types de variables</h3>
@@ -162,7 +171,7 @@
                             <li><em class="gras">Babel</em> rend compatible du code toute nouvelle génération vers du code plus ancien. Il convertit égaleemnt le JSx (langage de React) en Js</li>
                             <li><em class="gras">ESLint</em> analyse le code, fournit des conseils, etc</li>
                             <li><em class="gras">node_modules</em> est un équivalent du dossier vendor de composer. Il faut le mettre en git ignore.</li>
-                            <li><em class="gras"></em></li>
+                            <li>Pour utiliser une image, il faut en faire un import<em class="gras"></em></li>
                         </ul>
 
                     <h3>Commandes utiles</h3>
@@ -179,6 +188,52 @@
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article>
+
+            <article class="topic">
+
+                <h2>Semantic UI</h2>
+                    
+                    <h3>Installation</h3>
+
+                        <ul>
+                            <li><em class="gras">yarn add semantic-ui-react</em></li>
+                            <li>Puis <em class="gras">yarn add semantic-ui-css</em></li>
+                            <li>Puis on fait l'import suivant dans notre fichier point d'entrée : <em class="gras">import 'semantic-ui-css/semantic.min.css';</em></li>
+                            <li>Un <em class="gras">Segment</em> est une boîte</li>
+                            <li><em class="gras">itemsPerRow</em> dans Card.Group permet de définir le nombre de cartes par rang</li>
+                            <li><em class="gras">fluid</em> dans un composant permet de donner une width de 100% au composant</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article>
+
+            <article class="topic">
+
+                <h2>Champs contrôlés</h2>
+
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li>Un composant contrôlé contient un champ de saisie. Le composant récupère auprès d'un composant parent la valeur qu'il doit afficher dans le champ, et informe le composant parent s'il faut changer la valeur (par exemple quand l'utilisateur saisit un caractère). <em class="gras"></em></li>
+                            <li>En Jsx, on relie un label à son input avec <em class="gras">htmlFor="name"</em> dans le label et <em class="gras">id="name"</em> dans l'input</li>
+                            <li>On peut utiliser des useState en paramètres d'un composant, exemple: <em class="gras">const Field = ({ value, changeValue }) => {</em></li>
+                            <li>Ainsi, on peut par exemple modifier les données définissant l'input de la manière suivante:<em class="gras">value={value}</em> et <em class="gras">onChange={handleChange}</em></li>
+                            <li><em class="gras">onChange={function}</em> permet d'appeler une fonction à chaque modification du champ d'un formulaire</li>
+                            <li>Dans cet exemple, changeValue sera de type fonction dans la définition des PropTypes: <em class="gras">changeValue: PropTypes.func.isRequired</em></li>
+                            <li>On appellera donc le composant de la manière suivante: <em class="gras">< Field value={email} changeValue={setEmail} /></em></li>
+                            <li>Attention : il vaut mieux placer les useState le plus haut possible, si possible dans App. Sinon, <em class="gras">à chaque changement de vue, il faudra recréer des useState</em></li>
+                            <li><em class="gras">setFields({...fields, [name]: value,});</em> permet de déverser l'objet actuel fields et de changer la valeur du champ</li>
+                            <li><em class="gras">Field.defaultProps = {value: '',};</em> permet de définir une valeur par défaut pour un props </li>
+                            <li>Le traitement de data, <em class="gras">c'est dans App !</em></li>
+                            <li><em class="gras">yarn add classnames</em> permet d'utiliser la librairie classNames</li>
+                            <li><em class="gras">const classCss = classNames('task', {'task--done': done,})</em>: la classe css 'task--done' ne sera présente que si done vaut true</li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul>
@@ -233,7 +288,14 @@
                             <li><em class="gras">import styled from 'styled-components';</em> permet d'importer styled-components dans l'index.js racine ainsi que dans les fichiers ComposantStyled.js</li>
                             <li>On peut créer nos variables styled components dans <em class="gras">src/styles/theme</em></li>
                             <li>Les fichiers <em class="gras">ComposantStyled.js</em> permettent de définir le style du composant qui sera placé lui-même dans un composant. On peut réutiliser les variables définies dans theme.</li>
-                            <li><em class="gras"></em></li>
+                            <li>Pour définir la background color, on peut passer par <em class="gras">createGlobalStyle</em></li>
+                            <li><em class="gras">import styled, { createGlobalStyle } from 'styled-components';</em></li>
+                            <li><em class="gras">export const GlobalStyle = createGlobalStyle`</em></li>
+                            <li><em class="gras">body {</em></li>
+                            <li><em class="gras">background-color: black;</em></li>
+                            <li><em class="gras">}</em></li>
+                            <li><em class="gras">`;</em></li>
+                            <li>Puis on l'utilise comme un composant <em class="gras">< Globalstyle /></em> après le AppStyle. Il sera injecté directement dans head, il n'est pas rattaché à un élément du DOM.</li>
                             <li><em class="gras"></em></li>
                         </ul>
 
@@ -248,6 +310,15 @@
                             <li><em class="gras"></em></li>
                         </ul> 
 
+                    <h3>Etapes</h3>
+
+                        <ul>
+                            <li><em class="gras">Structure de base - identification des vues</em></li>
+                            <li><em class="gras">Définition du Theme et AppStyled</em></li>
+                            <li><em class="gras">Créer le projet en statique</em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+                        
             </article>
 
             <article class="topic">
@@ -261,6 +332,8 @@
                             <li>Pour utiliser useState, il faut appeler le hook : <em class="gras">import React, { useState } from 'react';</em></li>
                             <li><em class="gras">const [donnée, modifierLaDonnée] = useState('valeur de départ')</em>: ici on crée une variable qui gère la lecture de la donnée du state (donnée) et une qui gère la modification de la donnée (modifierLaDonnée).</li>
                             <li><em class="gras">const selectedPosts = postsData.filter((post) => post.category === selectedCategory)</em> : fonction qui filtre sur les posts dont la catégorie est `selectedCategory`</li>
+                            <li><em class="gras">On ne doit jamais modifier le state par nous même !</em> On génère un nouveau tableau / génère une copie.</li>
+                            <li>const newTasks = tasks.push(newTask) est interdit. A la place on fera: <em class="gras">const newTasks = [...tasks, newTask]</em></li>
                         </ul>
 
                     <h3>UseEffect</h3>
@@ -278,6 +351,15 @@
                         <ul>
                             <li>Les <em class="gras">params</em> décrivent les segments dynamiques de l'url</li>
                             <li><em class="gras">const { slug } = useParams();</em> permet de récupérer le paramètre (partie dynamique) capturé par la route</li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>UseRef</h3>
+
+                        <ul>
+                            <li>On peut cibler un élément du DOM avec <em class="gras">ref={searchInputElement}</em>, puis on fera searchInputElement = useRef(null)</li>
+                            <li>L'import de useRef se fait avec <em class="gras">import React, { useRef } from 'react';</em></li>
+                            <li><em class="gras">searchInputElement.current.focus();</em> permet de placer le focus automatiquement dans l'input (si cette ligne de code est placée dans un useEffect)</li>
                             <li><em class="gras"></em></li>
                         </ul>
 
@@ -305,7 +387,9 @@
                             <li><em class="gras">return {__html: cleanCode,};</em> permet de renvoyer du html nettoyé</li>
                             <li><em class="gras">dangerouslySetInnerHTML={createMarkup()}</em> permet de renvoyer du html propre en appelant la fonction createMarkup, à créer soi-même</li>
                             <li>Pour plus de détails, voir e6 de la spé<em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li><em class="gras">.finally(() => {})</em> permet d'effectuer une action après then ou catch, quoi qu'il arrive.</li>
+                            <li>On peut créer un objet définissant les paramètres d'url à passer dans la reuqête axios, ex: <em class="gras">axios.get('https://api.github.com/search/repositories', axiosQueryParams).then(...etc)</em></li>
+                            <li>Ici axiosQueryParams est une variable qu'on définira aillaurs par <em class="gras">const axiosQueryParams = {params: {q: searchValue,},};</em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul>
@@ -376,37 +460,7 @@
 
             </article>
 
-            <article class="topic">
-
-                <h2>Champs contrôlés</h2>
-
-                    <h3>Good to know</h3>
-
-                        <ul>
-                            <li>En Jsx, on relie un label à son input avec <em class="gras">htmlFor="name"</em> dans le label et <em class="gras">id="name"</em> dans l'input</li>
-                            <li>On peut utiliser des useState en paramètres d'un composant, exemple: <em class="gras">const Field = ({ value, changeValue }) => {</em></li>
-                            <li>Ainsi, on peut par exemple modifier les données définissant l'input de la manière suivante:<em class="gras">value={value}</em> et <em class="gras">onChange={handleChange}</em></li>
-                            <li><em class="gras">onChange={function}</em> permet d'appeler une fonction à chaque modification du champ d'un formulaire</li>
-                            <li>Dans cet exemple, changeValue sera de type fonction dans la définition des PropTypes: <em class="gras">changeValue: PropTypes.func.isRequired</em></li>
-                            <li>On appellera donc le composant de la manière suivante: <em class="gras">< Field value={email} changeValue={setEmail} /></em></li>
-                            <li>Attention : il vaut mieux placer les useState le plus haut possible, si possible dans App. Sinon, <em class="gras">à chaque changement de vue, il faudra recréer des useState</em></li>
-                            <li><em class="gras">setFields({...fields, [name]: value,});</em> permet de déverser l'objet actuel fields et de changer la valeur du champ</li>
-                            <li><em class="gras">Field.defaultProps = {value: '',};</em> permet de définir une valeur par défaut pour un props </li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                        </ul>
-
-                    <h3>Etapes</h3>
-
-                        <ul>
-                            <li><em class="gras">Structure de base - identification des vues</em></li>
-                            <li><em class="gras">Définition du Theme et AppStyled</em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                        </ul>
-
-            </article>
+            
 
         </section>
 
