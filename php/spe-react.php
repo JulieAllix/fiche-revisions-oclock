@@ -460,6 +460,39 @@
 
             </article>
 
+            <article class="topic">
+
+                <h2>Rappels + Redux</h2>
+
+                    <h3>Rappels</h3>
+
+                        <ul>
+                            <li>On composant est une fonction qui retourne du Jsx<em class="gras"></em></li>
+                            <li><em class="gras">mount</em>: moment de la création des composants (chargement initial de la page)</li>
+                            <li><em class="gras">update</em>: moment où le composant est modifié</li>
+                            <li><em class="gras">unmount</em>: moment où on enlève le composant de React, sert à faire le ménage (timers en cours, écouteurs d'événements, etc). Pour cela, il faut placer un return dans le useEffect, et le composant dans le [].</li>
+                            <li>Pour déclencher un useEffect au moment où une variable change, il faut mettre cette variable dans le [] de fin du useEffect<em class="gras"></em></li>
+                        </ul>
+                    
+                    <h3>Redux</h3>
+
+                        <ul>
+                            <li>On istalle Redux avec <em class="gras">yarn add redux</em></li>
+                            <li>L'import de createStore se fait ainsi : <em class="gras">import { createStore } from 'redux';</em></li>
+                            <li><em class="gras">yarn add redux-devtools-extension</em> permet de faire le lien entre notre projet et l'extension Chrome de redux</li>
+                            <li>L'import se fait dans store dans index.js avec <em class="gras">import { devToolsEnhancer } from 'redux-devtools-extension/logOnlyInProduction';</em></li>
+                            <li>Toujours dans le même fichier, on utilise devToolsEnhancer avec <em class="gras">const store = createStore(reducer, devToolsEnhancer());</em></li>
+                            <li><em class="gras">getState()</em> permet de récupérer le state (lecture)</li>
+                            <li><em class="gras">dispatch( actionVoulue )</em> permet de chnager le state (écriture)</li>
+                            <li><em class="gras">subscribe</em> fonctionne comme un useEffect sans le [] à la fin : à chaque modification il s'enclenche</li>
+                            <li>On range les noms d'actions ( en majuscules) dans un dossier ections, dans un fichier index.js<em class="gras"></em></li>
+                            <li>On importe le fichier ainsi : <em class="gras">import * as actions from 'src/actions';</em></li>
+                            <li>On utilise les variables ainsi : <em class="gras">actions.DESCRIPTION_DE_L_ACTION</em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article>
+
             
 
         </section>
