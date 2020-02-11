@@ -10,5 +10,6 @@
             <li><a href="saison7.php">Saison 7</a></li>
             <li><a href="saison8.php">Saison 8</a></li>
             <li><a href="spe-react.php">Spé React</a></li>
+            <li><a href="redux.php">Redux</a></li>
         </ul>
     </nav>

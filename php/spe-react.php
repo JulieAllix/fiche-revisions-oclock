@@ -43,9 +43,9 @@
                             <li>Pour manipuler un objet, <em class="gras">il faut en créer un nouveau pourle remplacer, pas l'écraser</em></li>
                             <li><em class="gras">yarn add react-feather</em> permet d'installer la librairie d'icônes https://github.com/feathericons/react-feather</li>
                             <li><em class="gras">const highestId = Math.max(...tasks.map((task) => task.id));</em> est un exemple de générateur d'id</li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li><em class="gras">Ctrl + Shift + P</em> puis écrire snippets permet de se créer des raccourcis pour générer des bouts de code basiques</li>
+                            <li><em class="gras">rbc</em>: snippet que je me suis créé pour afficher les bases d'un composant</li>
+                            <li><em class="gras">Ctrl + ,</em> permet d'accéder aux settings en cours dans VSCode</li>
                             <li><em class="gras"></em></li>
                             
                         </ul>
@@ -483,16 +483,57 @@
                             <li>L'import se fait dans store dans index.js avec <em class="gras">import { devToolsEnhancer } from 'redux-devtools-extension/logOnlyInProduction';</em></li>
                             <li>Toujours dans le même fichier, on utilise devToolsEnhancer avec <em class="gras">const store = createStore(reducer, devToolsEnhancer());</em></li>
                             <li><em class="gras">getState()</em> permet de récupérer le state (lecture)</li>
-                            <li><em class="gras">dispatch( actionVoulue )</em> permet de chnager le state (écriture)</li>
+                            <li><em class="gras">dispatch( actionVoulue )</em> permet de changer le state (écriture)</li>
                             <li><em class="gras">subscribe</em> fonctionne comme un useEffect sans le [] à la fin : à chaque modification il s'enclenche</li>
                             <li>On range les noms d'actions ( en majuscules) dans un dossier ections, dans un fichier index.js<em class="gras"></em></li>
                             <li>On importe le fichier ainsi : <em class="gras">import * as actions from 'src/actions';</em></li>
                             <li>On utilise les variables ainsi : <em class="gras">actions.DESCRIPTION_DE_L_ACTION</em></li>
+                            <li><em class="gras">yarn add react-redux</em> permet d'ajouter une librairie qui propose différents outils pour relier react et redux</li>
+                            <li><em class="gras">Provider</em> est le fournisseur du store à l'ensemble de l'application</li>
+                            <li>On importe provider dans l'index.js initial avec <em class="gras">import { Provider } from 'react-redux';</em> puis on entoure < APP /> de balises < Provider store={store}></li>
+                            <li>Puis on importe le store avec <em class="gras">import store from 'src/store';</em></li>
+                            <li><em class="gras">import { useSelector } from 'react-redux';</em> permet de récupérer de la data provenant du state (redux)</li>
+                            <li><em class="gras">import { useDispatch } from 'react-redux';</em> permet de modifier le state (redux)</li>
+                            <li>Pour pouvoir utiliser useDispatch, on doit l'exécuter une première fois avec <em class="gras">const dispatch = useDispatch();</em></li>
+                            <li>Connect, qu'on importe avec <em class="gras">import { connect } from 'react-redux';</em> est un outil de react-redux qui va préparer des données pour un composant</li>
+                            <li><em class="gras">const mapStateToProps = (state) => ({props: state.props,});</em> transpose les données qui proviennent du state en props pour le composant</li>
+                            <li><em class="gras">const mapDispatchToProps = (state) => ({});</em></li>
+                            <li><em class="gras">ownProps</em>: ce sont les props qui figurent déjà sur un élément</li>
                             <li><em class="gras"></em></li>
                         </ul>
 
             </article>
+            <article class="topic">
 
+                <h2></h2>
+
+                    <h3></h3>
+
+                        <ul>
+                            <li><em class="gras"><>< /></em> est une div invisible: permet de regrouper des éléments</li>
+                            <li><em class="gras">Le container</em> fait le lien entre React (les composants) et Redux grâce à <em class="gras">connect</em></li>
+                            <li>Le principe du <em class="gras">dispatch</em> est de déclencher une action auprès du state</li>
+                            <li><em class="gras">yarn add tinycolor2</em> utilitaire pour manipuler des couleurs -> permet entre autres de générer des couleurs plus claires ou plus foncées</li>
+                            <li>On peut styliser un composant déjà stylisés avec un styled-components en mettant le nom du composant à la place de styled.div par exemple<em class="gras"></em></li>
+                            <li>Penser à <em class="gras">box-shadow</em> pour améliorer le design</li>
+                            <li><em class="gras">overflow</em> permet de scroller dans la zone dans laquelle on le place (css)</li>
+                            <li><em class="gras">overflow-x: hidden</em> : ce qui dépasse sur l'axe vertical sera caché</li>
+                            <li><em class="gras">  &::-webkit-scrollbar{background-color: none;</em> permet de customiser la scrollbar</li>
+                            <li>Redux dev tools dispose d'une fonction dispatch pour tester ce qu'il se passe en cas de modification du state<em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+                    
+                    <h3></h3>
+
+                        <ul>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+    
+            </article>
             
 
         </section>
