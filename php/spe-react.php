@@ -46,6 +46,12 @@
                             <li><em class="gras">Ctrl + Shift + P</em> puis écrire snippets permet de se créer des raccourcis pour générer des bouts de code basiques</li>
                             <li><em class="gras">rbc</em>: snippet que je me suis créé pour afficher les bases d'un composant</li>
                             <li><em class="gras">Ctrl + ,</em> permet d'accéder aux settings en cours dans VSCode</li>
+                            <li><em class="gras"><>< /></em> est une div invisible: permet de regrouper des éléments</li>
+                            <li><em class="gras">yarn add tinycolor2</em> utilitaire pour manipuler des couleurs -> permet entre autres de générer des couleurs plus claires ou plus foncées</li>
+                            <li>Penser à <em class="gras">box-shadow</em> pour améliorer le design</li>
+                            <li><em class="gras">overflow</em> permet de scroller dans la zone dans laquelle on le place (css)</li>
+                            <li><em class="gras">overflow-x: hidden</em> : ce qui dépasse sur l'axe vertical sera caché</li>
+                            <li><em class="gras">  &::-webkit-scrollbar{background-color: none;</em> permet de customiser la scrollbar</li>
                             <li><em class="gras"></em></li>
                             
                         </ul>
@@ -240,6 +246,22 @@
 
             </article>
 
+            <article class="topic">
+
+                <h2>Middlewares</h2>
+
+                    <h3>Initiation aux Middlewares</h3>
+
+                        <ul>
+                            <li>Un middleware permet de gérer les actions asynchrones (ex: requête à une API).<em class="gras"></em></li>
+                            <li>Un middleware se définit dans le dossier middleware par <em class="gras">export default store => next => (action) => { fonction; next(action); }</em> : store de redux, middleware suivant, action qui vient d'être dispatchée</li>
+                            <li>Pour appliquer un middleware dans notre store, on utilise la fonction applyMiddleware de Redux. Puis, on l'ajoute en argument de la fonction createStore (dans enhancers), en plus du reducer. On l'importe avec <em class="gras">import { createStore, applyMiddleware } from 'redux';</em></li>
+                            <li>On récupère composeWithDevTools avec <em class="gras">import { composeWithDevTools } from 'redux-devtools-extension';</em>. on va s'en servir pour créer les enhancers.</li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article>
+
         </section>
 
         <section id="second-section">
@@ -296,6 +318,7 @@
                             <li><em class="gras">}</em></li>
                             <li><em class="gras">`;</em></li>
                             <li>Puis on l'utilise comme un composant <em class="gras">< Globalstyle /></em> après le AppStyle. Il sera injecté directement dans head, il n'est pas rattaché à un élément du DOM.</li>
+                            <li>On peut styliser un composant déjà stylisé avec un styled-components en mettant le nom du composant à la place de styled.div par exemple<em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul>
 
@@ -499,43 +522,15 @@
                             <li><em class="gras">const mapStateToProps = (state) => ({props: state.props,});</em> transpose les données qui proviennent du state en props pour le composant</li>
                             <li><em class="gras">const mapDispatchToProps = (state) => ({});</em></li>
                             <li><em class="gras">ownProps</em>: ce sont les props qui figurent déjà sur un élément</li>
-                            <li><em class="gras"></em></li>
-                        </ul>
-
-            </article>
-            <article class="topic">
-
-                <h2></h2>
-
-                    <h3></h3>
-
-                        <ul>
-                            <li><em class="gras"><>< /></em> est une div invisible: permet de regrouper des éléments</li>
                             <li><em class="gras">Le container</em> fait le lien entre React (les composants) et Redux grâce à <em class="gras">connect</em></li>
                             <li>Le principe du <em class="gras">dispatch</em> est de déclencher une action auprès du state</li>
-                            <li><em class="gras">yarn add tinycolor2</em> utilitaire pour manipuler des couleurs -> permet entre autres de générer des couleurs plus claires ou plus foncées</li>
-                            <li>On peut styliser un composant déjà stylisés avec un styled-components en mettant le nom du composant à la place de styled.div par exemple<em class="gras"></em></li>
-                            <li>Penser à <em class="gras">box-shadow</em> pour améliorer le design</li>
-                            <li><em class="gras">overflow</em> permet de scroller dans la zone dans laquelle on le place (css)</li>
-                            <li><em class="gras">overflow-x: hidden</em> : ce qui dépasse sur l'axe vertical sera caché</li>
-                            <li><em class="gras">  &::-webkit-scrollbar{background-color: none;</em> permet de customiser la scrollbar</li>
                             <li>Redux dev tools dispose d'une fonction dispatch pour tester ce qu'il se passe en cas de modification du state<em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li>On peut utiliser une même fonction de modification du state pour plusieurs champs d'un formulaire. Pour cela, on va passer le name du champ ainsi que sa value en paramètres de la props créée dans le container. On créera une seule et même action qui renverra le name et la value. Puis dans le reducer, on retournera <em class="gras">[action.name]: action.value</em></li>
                             <li><em class="gras"></em></li>
                         </ul>
-                    
-                    <h3></h3>
 
-                        <ul>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                        </ul>
-    
             </article>
             
-
         </section>
 
     </main>
