@@ -262,6 +262,37 @@
 
             </article>
 
+            <article class="topic">
+
+                <h2>Astuces d'amélioration de l'affichage</h2>
+
+                    <h3>Astuces générales</h3>
+
+                        <ul>
+
+                            <li><em class="gras">ref</em> donne la référence vers l'élément du DOM généré. S'utilise en important useRef.</li>
+                            <li><em class="gras">ElementDuDOM.current</em> cible l'élément en cours</li>
+                            <li><em class="gras">.scrollTo</em> permet de scroller vers un élément en particulier</li>
+                            <li><em class="gras">href="#monid"</em> permet d'aller sur l'élément de ma page qui a l'id monid</li>
+                            <li>Pour cibler un élément du DOM par un scroll de façon précise, on peut utiliser <em class="gras"><a href="https://developer.mozilla.org/fr/docs/Web/API/Element/getBoundingClientRect">getBoundingClientRect</a></em></li>
+                            <li><em class="gras">scroll-behavior: smooth;</em> en css permet de ralentir la vitesse du scroll</li>
+                            <li><em class="gras">@keyframes grow {}</em> permet de créer une animation, on peut la place dans GlobalStyles, et on l'appellera avec 'animation: grow .4s' par exemple dans l'élément qui nous intéresse, par exemple dans le body (grow est un exemple)</li>
+                            <li><em class="gras">word-break: break-word;</em> permet de casser les mots trop longs s'ils prennent toute la largeur</li>
+                        </ul>
+
+                    <h3>Faire apparaître un élément par glissement depuis la droite</h3>
+
+                        <ul>
+                            <li>Sur la position de départ, on place un <em class="gras">transform: translateX(245px);</em> (ou autre nb de pixels, c'est un ex), qui va pousser le composant hors du champ de vision</li>
+                            <li>Sur la classe correspondant à l'ouverture du composant, on place un <em class="gras">transform: translateX(0);</em></li>
+                            <li>Puis on viendra placer sur ComponentStyled en général un transition, ex: <em class="gras">transition: .6s;</em></li>
+                            <li>Pour plus de détails, voir la branche settings de la chatroom sur le repo de Philippe<em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+    
+            </article>
+
         </section>
 
         <section id="second-section">
@@ -526,11 +557,41 @@
                             <li>Le principe du <em class="gras">dispatch</em> est de déclencher une action auprès du state</li>
                             <li>Redux dev tools dispose d'une fonction dispatch pour tester ce qu'il se passe en cas de modification du state<em class="gras"></em></li>
                             <li>On peut utiliser une même fonction de modification du state pour plusieurs champs d'un formulaire. Pour cela, on va passer le name du champ ainsi que sa value en paramètres de la props créée dans le container. On créera une seule et même action qui renverra le name et la value. Puis dans le reducer, on retournera <em class="gras">[action.name]: action.value</em></li>
+                            <li>On peut avoir plusieurs reducers grâce à <em class="gras">combineReducers</em></li>
+                            <li>Chaque reducer aura son propre intial state<em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                         </ul>
 
             </article>
-            
+
+            <article class="topic">
+
+                <h2>Socket.io</h2>
+
+                    <h3></h3>
+
+                        <ul>
+
+                            <li>Pour récupérer le socket.io que l'on souhaite utiliser, on peut insérer <em class="gras">une balise script contenant l'url du socket.io</em> dans le fichier html de notre projet</li>
+                            <li><em class="gras">window.io('http://localhost:3001')</em> permet de connecter notre application à socket.io</li>
+                            <li>Pour créer une action pour ouvrir une connexion permanente avec le serveur (WebSocket) on peut insérer ceci dans le fichier d'actions: <em class="gras">export const wsConnect = () => ({type:WS_CONNECT,});</em></li>
+                            <li>Puis, dans le fichier de base index.js, on va importer notre action avec <em class="gras">import { wsConnect } from 'src/actions/chat';</em>, et dispatcher la volonté de connecter le WebSocket avec <em class="gras">store.dispatch(wsConnect());</em></li>
+                            <li>Enfin, on va créer un fichier dans le dossier middlewares correspondant à notre volonté de connexion<em class="gras"></em></li>
+                            <li><em class="gras">socket.emit</em> permet d'envoyer des infos</li>
+                            <li><em class="gras">socket.on</em> permet d'enr ecevoir</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article>
+
         </section>
 
     </main>
