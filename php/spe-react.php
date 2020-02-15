@@ -278,6 +278,10 @@
                             <li><em class="gras">scroll-behavior: smooth;</em> en css permet de ralentir la vitesse du scroll</li>
                             <li><em class="gras">@keyframes grow {}</em> permet de créer une animation, on peut la place dans GlobalStyles, et on l'appellera avec 'animation: grow .4s' par exemple dans l'élément qui nous intéresse, par exemple dans le body (grow est un exemple)</li>
                             <li><em class="gras">word-break: break-word;</em> permet de casser les mots trop longs s'ils prennent toute la largeur</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
                         </ul>
 
                     <h3>Faire apparaître un élément par glissement depuis la droite</h3>
@@ -350,6 +354,8 @@
                             <li><em class="gras">`;</em></li>
                             <li>Puis on l'utilise comme un composant <em class="gras">< Globalstyle /></em> après le AppStyle. Il sera injecté directement dans head, il n'est pas rattaché à un élément du DOM.</li>
                             <li>On peut styliser un composant déjà stylisé avec un styled-components en mettant le nom du composant à la place de styled.div par exemple<em class="gras"></em></li>
+                            <li>On peut faire passer des props dans ComposantStyled. A l'appel du compo style on va faire : <em class="gras">< ComposantStyled variableName={propsName}></em></li>
+                            <li>Puis dans le fichier ComposantStyled, on va utiliser la props ainsi, par exemple si on veut affecter la background-color : <em class="gras">background-color: ${props => props.variableName};</em></li>
                             <li><em class="gras"></em></li>
                         </ul>
 
