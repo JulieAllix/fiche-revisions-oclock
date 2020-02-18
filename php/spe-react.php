@@ -122,6 +122,10 @@
 
                         <ul>
                             <li>La méthode <em class="gras">nomDuTableau.find()</em> renvoie la valeur du premier élément trouvé dans le tableau</li>
+                            <li>Exemple de fonction utilisant find:<em class="gras"></em></li>
+                            <li><em class="gras">export const getRecipeFromSlug = (list, slug) => {</em></li>
+                            <li><em class="gras">return list.find((recipe) => getSlugFromString(recipe.title) === slug);</em></li>
+                            <li><em class="gras">};</em></li>
                         </ul>
 
                     <h3>Eclatement de tableau</h3>
@@ -297,6 +301,67 @@
     
             </article>
 
+            <article class="topic">
+
+                <h2>Les classes</h2>
+
+                    <h3>Intro</h3>
+
+                        <ul>
+                            <li>On peut écrire un composant d'une façon différente: avec une classe. On procède ainsi: <em class="gras">class Composant extends React.Component { render() {return (du jsx)}}</em></li>
+                            <li>Au sein d'une classe, on doit appeler un constructeur avec <em class="gras">constructor(){}</em> pour avoir accès au state</li>
+                            <li>La méthode <em class="gras">super()</em>, placée dans construct, permet d'appeler le constructeur du parent</li>
+                            <li>C'est le constructor qui va recevoir les props, et il les fournit au constructeur du parent (super)<em class="gras"></em></li>
+                            <li><em class="gras">this.state = { props: 'value' }</em> permet de définir un state dans un composant</li>
+                            <li>Pour se servir du state du composant, dans render, on va faire <em class="gras">this.state.props</em></li>
+                            <li>Pour donner la valeur de this aux méthodes souhaitant l'utiliser, il faut utiliser <em class="gras">this.props.bind(this)</em> dans le constructor</li>
+                            <li>Render a accès à this parce qu'elle fait partie des fonctions natives de React.Component<em class="gras"></em></li>
+                            <li><em class="gras">this.setState({ props : 'nouvelleValeur'})</em> permet de modifier le state</li>
+                        </ul>
+                    
+                    <h3>Cycle de vie</h3>
+
+                        <ul>
+                            <li>Points de passage pour le composant: <em class="gras"></em></li>
+                            <li><em class="gras">constructor (instanciation)</em></li>
+                            <li><em class="gras">render (rendu)</em></li>
+                            <li><em class="gras">componentDidMount</em> (composant monté pour la 1ère fois, équivaut à un useEffect qui se termine par []): utile pour ajax, de la manip de DOM, poser des events sur document, définir des timers ...</li>
+                            <li><em class="gras">componentDidUpdate</em> (composant mis à jour): utile pour de la manip de DOM, poser des events sur document, définir des timers ...</li>
+                            <li><em class="gras">componentWillUnmount</em></li>
+                        </ul>
+        
+            </article>
+
+            <article class="topic">
+
+                <h2>Gestion des slugs</h2>
+
+                    <h3>Intro</h3>
+
+                        <ul>
+                            <li>Slugify permet de transformer de la data en slug (voir correction e17, dans selectors > urls)<em class="gras"></em></li>
+                            <li>On installe Slugify avec <em class="gras">npm install slugify</em></li>
+                            <li>On peut gérer les slugs en créant des selectors. L'import de Slugify se fera avec <em class="gras">import slugify from 'slugify';</em></li>
+                        </ul>
+
+                    <h3>Utilisation</h3>
+
+                        <ul>
+                            <li>Pour transformer une chaîne de caractères en slug, on peut créer la fonction suivante:<em class="gras"></em></li>
+                            <li><em class="gras">export const getSlugFromString = (string) => {</em></li>
+                            <li><em class="gras">  const slug = slugify(string, {</em></li>
+                            <li><em class="gras">    remove: /[*+~.()'"!:@]/g, // regex to remove characters</em></li>
+                            <li><em class="gras">    lower: true, // result in lower case</em></li>
+                            <li><em class="gras">  });</em></li>
+                            <li><em class="gras">  return slug;</em></li>
+                            <li><em class="gras">};</em></li>
+                            <li>On peut appeler un composant directement dans une route, ex:<em class="gras">< Route exact path="/recipe/:slug" component={Recipe} /></em>, si on n'a pas de data à transmettre</li>
+                            <li>Ca permet de récupérer les props liées au composant Route (history, match, location, etc) à l'aide d'<em class="gras">ownProps</em> dans le Container (dans mapStateToProps)</li>
+                            <li><em class="gras">const { slug } = ownProps.match.params;</em> permet de récupérer seulement les infos de mtch (slug)</li>
+                        </ul>
+
+            </article>
+
         </section>
 
         <section id="second-section">
@@ -437,6 +502,14 @@
                             <p>.catch((error) => {</p>
                             <p>console.error(error);</p>
                             <p>});</p>
+                            <li>Syntaxe alternative:<em class="gras"></em></li>
+                            <li><em class="gras">axios({method: 'get', url: 'http://localhost:3001/recipes',})</em></li>
+                            <li><em class="gras">.then((response) => {})</em></li>
+                            <li><em class="gras">.catch((error) => {});</em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
                             <li><em class="gras">.then</em> gère le comportement en cas de succès</li>
                             <li><em class="gras">.catch</em> gère le comportement en cas d'erreur</li>
                             <li><em class="gras">dangerouslySetInnerHTML</em> peut être utilisé pour lire le code html renvoyé dans le json d'une API dont on récupère la data avec axios. Mais il faut le nettoyer avec DOMPurify.sanitize avant.</li>
@@ -565,10 +638,13 @@
                             <li>On peut utiliser une même fonction de modification du state pour plusieurs champs d'un formulaire. Pour cela, on va passer le name du champ ainsi que sa value en paramètres de la props créée dans le container. On créera une seule et même action qui renverra le name et la value. Puis dans le reducer, on retournera <em class="gras">[action.name]: action.value</em></li>
                             <li>On peut avoir plusieurs reducers grâce à <em class="gras">combineReducers</em></li>
                             <li>Chaque reducer aura son propre intial state<em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li>On rassemblera tous les reducers dans un fichier index.js dans lequel on inclura:<em class="gras"></em></li>
+                            <li><em class="gras">import { combineReducers } from 'redux';</em></li>
+                            <li><em class="gras">import composantReducer from './composant';</em></li>
+                            <li><em class="gras">const rootReducer = combineReducers({</em></li>
+                            <li><em class="gras">  composant: composantReducer,</em></li>
+                            <li><em class="gras">});</em></li>
+                            <li><em class="gras">export default rootReducer;</em></li>
                         </ul>
 
             </article>
