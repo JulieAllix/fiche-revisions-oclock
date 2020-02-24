@@ -560,7 +560,7 @@
                             <li><em class="gras">Link</em> injecte dans l'url le bout de route qui nous manque</li>
                             <li>L'import se fait avec <em class="gras">import { Link } from 'react-router-dom';</em></li>
                             <li>On va encadrer la partie où l'on veut appliquer le lien à l'aide de la balise Link, par ex: <em class="gras">< Link to={`/post/${slug}`}></em></li>
-                            <li><em class="gras">NavLink</em> permet en plus de spécifier plusieurs props notamment pour ajouter des attributs de style à l'élément rendu. La classe attribuée par défaut dans un NavLink est 'active'.</li>
+                            <li><em class="gras">NavLink</em> permet en plus de spécifier plusieurs props notamment pour ajouter des attributs de style à l'élément rendu. La classe attribuée par défaut dans un NavLink est 'active'. NavLink surveille l'URL. Si l'url est la même que le to du NavLink, la classe .active (par défaut) est appliquée. </li>
                         </ul>
 
                     <h3>Route</h3>
@@ -645,6 +645,8 @@
                             <li><em class="gras">  composant: composantReducer,</em></li>
                             <li><em class="gras">});</em></li>
                             <li><em class="gras">export default rootReducer;</em></li>
+                            <li>Lorsqu'on utilise plusieurs reducers, dans le container, il faut bien penser à préciser le reducer dont on veut récupérer le state quand on fait un mapStateToProps: <em class="gras">props: state.reducer.props,</em></li>
+                            <li><em class="gras"></em></li>
                         </ul>
 
             </article>
@@ -672,6 +674,95 @@
                             <li><em class="gras"></em></li>
                         </ul>
 
+            </article>
+
+            <article class="topic">
+
+                <h2>Les tests</h2>
+
+                    <h3>Les différents niveaux de tests</h3>
+
+                        <ul>
+                            <li><em class="gras">Test unitaires:</em> teste une portion de code (composant par ex)</li>
+                            <li><em class="gras">Test d'intégration:</em> teste l'assemblage de plusieurs parties de code</li>
+                            <li><em class="gras">Test système ou test fonctionnel:</em> tout ce qui ne rentre pas dans les deux précédents, teste la conformité du système (test de perf, benchmark, test de charge)</li>
+                            <li><em class="gras">Test d'acceptation:</em> on teste le projet avec le client pour s'assurer que tout soit conforme avec ses attentes et exigences</li>
+                        </ul>
+                    
+                    <h3>Outils</h3>
+
+                        <ul>
+                            <li>On va utiliser un <em class="gras">test runner</em> et un utilitaire pour nos assertions (test runner: Mocha, assertion: Chai)</li>
+                            <li><em class="gras">TDD = Test Driven Development</em>: les tests sont écrits avant le code pour le satisfaire</li>
+                            <li><em class="gras">Les trois règles du TDD</em></li>
+                            <li>Vous devez écrire un test qui échoue avant de pouvoir écrire le code de production correspondant<em class="gras"></em></li>
+                            <li>Vous devez écrire une seule assertion à la fois, qui fait échouer le test ou qui échoue à la compilation (ou erreur de syntaxe en Js) : <em class="gras">on écrit les tests un par un</em></li>
+                            <li>Vous devez écrire le minimum de code de production pour que l'assertion du test actuellement en échec soit satisfaite<em class="gras"></em></li>
+                            <li>Schéma:<em class="gras">red, green, refactor</em></li>
+                            <li><em class="gras">"test": "NODE_PATH=./ mocha --require tests/.setup.js tests/**/*.test.js"</em> dans package.json permet de lancer les tests avec un simple yarn test</li>
+                            <li><em class="gras">husky</em> permet de lancer des tests avant un commit et un push, et les bloque si les tests ne passent pas</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>Chai</h3>
+
+                        <ul>
+                            <li>Chai possède trois grands styles pour faire des tests:<em class="gras"></em></li>
+                            <li><em class="gras">Assert</em></li>
+                            <li><em class="gras">BDD (expect & should):</em> expect fonctionne sur tous les navigateurs, contrairement à should qui ne fonctionne pas sur IE</li>
+                            <li><em class="gras">Configuration</em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+                    
+                    <h3>Enzyme</h3>
+
+                        <ul>
+                            <li>Pour tester un composant, on peut utiliser shallow de Enzyme<em class="gras"></em></li>
+                            <li>Il faut monter le composant, ex:<em class="gras">const wrapper = shallow(< App loading />)</em></li>
+                            <li><em class="gras">https://airbnb.io/enzyme/#shallow-rendering</em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+                    <h3>Maintenir une connexion</h3>
+
+                        <ul>
+                            <li>Le back doit être codé de sorte à générer un cookie au moment de la connexion<em class="gras"></em></li>
+                            <li>Côté front, un cookie va être créé cdans le header<em class="gras"></em></li>
+                            <li><em class="gras">withCredentials: true</em> transmet le cookie contenant les infos de connexion au serveur à chaque requête au serveur</li>
+                            <li>Pour maintenir la connexion, on doit mettre un withCredentials: true dans toutes nos requêtes axios liées aux actions qu'on peut effectuer en étant connecté<em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
+            </article>
+
+            <article class="topic">
+
+                <h2></h2>
+
+                    <h3></h3>
+
+                        <ul>
+                            <li>Pour accéder à un API via un token, on va stocker le token dans un fichier <em class="gras">token.js</em> (où on en fera un export), puis on l'envoie dans nos requêtes axios dans headers</li>
+                            <li>ex: <em class="gras">headers : { Authorization: `token ${token}`}</em></li>
+                        </ul>
+                    
+                    <h3></h3>
+
+                        <ul>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+    
             </article>
 
         </section>
