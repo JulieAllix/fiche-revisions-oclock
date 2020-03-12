@@ -8,7 +8,7 @@
 
     <header>
 
-    <h1>Fiche de révisions : Saison  - </h1>
+    <h1>Fiche de révisions : Spé React </h1>
     <?php require 'partials/main-nav-bar.php'; ?>
 
     </header>
@@ -361,7 +361,31 @@
                         </ul>
 
             </article>
+            <article class="topic">
 
+                <h2>sessionStorage</h2>
+
+                    <h3>Infos</h3>
+
+                        <ul>
+                            <li>La fonction <em class="gras">sessionStorage</em> permet de conserver des données même au rechargement de la page (contrairement au state)</li>
+                            <li>Le storage n'admet que des string, mais on peut utiliser <em class="gras">JSON.stringify et JSON.parse</em></li>
+                            <li><em class="gras"></em></li>
+
+                        </ul>
+                    
+                    <h3>Fonctions utiles</h3>
+
+                        <ul>
+                            <li>Save data to sessionStorage : <em class="gras">sessionStorage.setItem('key', 'value');</em></li>
+                            <li>Get saved data from sessionStorage : <em class="gras">let data = sessionStorage.getItem('key');</em></li>
+                            <li>Remove saved data from sessionStorage : <em class="gras">sessionStorage.removeItem('key');</em></li>
+                            <li>Remove all saved data from sessionStorage<em class="gras">sessionStorage.clear();</em></li>
+                            <li>Pour stocker de la donnée autre qu'une string : <em class="gras">sessionStorage.setItem('user', JSON.stringify(user));</em></li>
+                            <li>Pour récupérer de la donnée autre qu'une string : <em class="gras">var obj = JSON.parse(sessionStorage.getItem('user'));</em></li>
+                        </ul>
+    
+            </article>
         </section>
 
         <section id="second-section">
