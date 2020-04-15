@@ -52,8 +52,7 @@
                             <li><em class="gras">overflow</em> permet de scroller dans la zone dans laquelle on le place (css)</li>
                             <li><em class="gras">overflow-x: hidden</em> : ce qui dépasse sur l'axe vertical sera caché</li>
                             <li><em class="gras">  &::-webkit-scrollbar{background-color: none;</em> permet de customiser la scrollbar</li>
-                            <li><em class="gras"></em></li>
-                            
+                            <li>Pour changer la <em class="gras">favicon</em>: remplacer l'image qui se trouve dans src > assets, puis remplacer son nom si nécessaire dans config > webpack.common.js dans <em class="gras">"new HtmlWebpackPlugin({favicon: paths.assets + '/favicon.ico'"</em></li>
                         </ul>
 
                     <h3>Les types de variables</h3>
