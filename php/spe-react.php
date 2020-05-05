@@ -703,6 +703,20 @@
 
                 <h2>Les tests</h2>
 
+                    <h3>Good to know</h3>
+
+                        <ul>
+                            <li>Dans package.json, la ligne <em class="gras">"test": "NODE_PATH=./ mocha --require tests/.setup.js tests/**/*.test.js",</em> va déclencher l'appel de Mocha en lui donnant le dossier actuel de travail (./), en passant par le fichier de setup (--require tests/.setup.js) et de regarder tous les fichiers se finissant par test.js qui sont dans le dossier test et ses sous-dossiers (tests/**/*.test.js) </li>
+                            <li>Du coup <em class="gras">yarn test</em> permet de déclencher tous les tests</li>
+                            <li><em class="gras">./node_modules/.bin/mocha tests/demo.test.js</em>permet de lancer le test demo.test.js quand yarn test ne fonctionne pas</li>
+                            <li><em class="gras">yarn test:watch</em> relance des tests à chaque modification dans un des fichiers de test</li>
+                            <li>Parmi les tests de base, tester son <em class="gras">initial state et ses valeurs</em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
+                        </ul>
+
                     <h3>Les différents niveaux de tests</h3>
 
                         <ul>

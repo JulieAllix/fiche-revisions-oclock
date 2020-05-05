@@ -34,6 +34,14 @@
                             <li>Quand un élément sort du flux, ses enfants sortent aussi. Un élément hors flux se positionne par rapport à son plus proche parent hors-flux.</li>
                             <li>Quand on a un élément qui a une marge, il va repousser tous ses parents qui n'ont pas de padding.</li>
                             <li>Un media query s'écrit tout en bas d'un fichier css.</li>
+                            <li>Pour centrer un texte dans une div (axe vertical), on peut donner la height de la div à la propriété line-height</li>
+                            <li><em class="gras">::selection</em> permet de styliser le surlignage</li>
+                            <li><em class="gras">::first-letter</em> permet de styliser la première lettre d'un texte</li>
+                            <li><em class="gras">href="#divName" dans un lien permet de scroller vers l'élément de la page qui comporte cet id</em> permet de rendre les transitions du scroll plus agréables</li>
+                            <li><em class="gras">html { scroll-behavior: smooth; }</em> permet de rendre les transitions du scroll plus agréables</li>
+                            <li><em class="gras">filter: invert(1)</em> permet de créer un dark mode rapidement</li>
+                            <li><em class="gras">html {font-size:}</em> permet de définir la taille qui servira de base pour notre unité rem</li>
+                            <li>Pour mettre une couleur en dégardé dans du texte, on peut procéder ainsi: <em class="gras">p {background: linear-gradient(to left, color1, color 2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline;}</em></li>
                         </ul>
 
                     <h3>Mise en page classique</h3>
@@ -91,7 +99,7 @@
                                     <ul class="list-level-two">
                                         <li>flex: indispensable pour utiliser les propriétés de flex</li>
                                         <li>block: permet de transformer un élément in-line en élément block</li>
-                                        <li>in-line: permet de transformer un élément block en in-line</li>
+                                        <li>in-line: permet de transformer un élément block en in-line (impossile d'utiliser les propriétés width et height d'un élément inline. On peut jouer sur les margin et padding mais ils ne s'appliqueront que sur l'axe horizontal)</li>
                                         <li>inline-block: du pt de vue ext: inline; du point de vue intrinsèque: bloc</li>
                                     </ul>
                                 <li><em class="gras">flex-direction</em>: orientation des éléments (row, row-reverse, column, column-reverse). 
