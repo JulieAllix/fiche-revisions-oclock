@@ -37,7 +37,7 @@
                             <li>Pour centrer un texte dans une div (axe vertical), on peut donner la height de la div à la propriété line-height</li>
                             <li><em class="gras">::selection</em> permet de styliser le surlignage</li>
                             <li><em class="gras">::first-letter</em> permet de styliser la première lettre d'un texte</li>
-                            <li><em class="gras">href="#divName" dans un lien permet de scroller vers l'élément de la page qui comporte cet id</em> permet de rendre les transitions du scroll plus agréables</li>
+                            <li><em class="gras">href="#divName"</em> dans un lien permet de scroller vers l'élément de la page qui comporte cet id permet de rendre les transitions du scroll plus agréables</li>
                             <li><em class="gras">html { scroll-behavior: smooth; }</em> permet de rendre les transitions du scroll plus agréables</li>
                             <li><em class="gras">filter: invert(1)</em> permet de créer un dark mode rapidement</li>
                             <li><em class="gras">html {font-size:}</em> permet de définir la taille qui servira de base pour notre unité rem</li>
