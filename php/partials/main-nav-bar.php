@@ -11,5 +11,6 @@
             <li><a href="saison8.php">Saison 8</a></li>
             <li><a href="spe-react.php">Spé React</a></li>
             <li><a href="redux.php">Redux</a></li>
+            <li><a href="javascript-tutorials.php">Js Tutos</a></li>
         </ul>
     </nav>
