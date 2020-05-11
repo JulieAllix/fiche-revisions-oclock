@@ -150,6 +150,10 @@
                             </li>
                             <li>Pour positionner un élément sur un autre, on peut passer l'élément à positionner derrière en position:relative et l'élément à positionner dessus en position:absolute (l'élément derrière doit être parent de l'autre élément)</li>
                             <li><em class="gras">z-index</em>: permet de positionner un élément devant ou derrière un autre. La valeur -1 le fait passer derrière le flux.</li>
+                            <li><em class="gras">object-fit: cover</em> permet de réajuster une image étirée par les dimensions qu'on lui a données</li>
+                            <li><em class="gras">object-position: top</em> permet d'effectuer ce réajustement en conservant le haut de l'image</li>
+                            <li><em class="gras"></em></li>
+                            <li><em class="gras"></em></li>
                         </ul>
 
                     <h3>Transitions, animations, etc</h3>

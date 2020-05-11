@@ -60,12 +60,12 @@
 
             <article class="topic">
 
-                <h2></h2>
+                <h2>Tutos Figma</h2>
 
                     <h3></h3>
 
                         <ul>
-                            <li><em class="gras"></em></li>
+                            <li>Format HD pour le cadre: <em class="gras">1920 x 1080</em></li>
                         </ul>
 
                    
