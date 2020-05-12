@@ -36,12 +36,13 @@
                             <li><em class="gras"></em></li>
                         </ul>
 
-                    <h3></h3>
+                    <h3>GSAP</h3>
 
                         <ul>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
-                            <li><em class="gras"></em></li>
+                            <li><em class="gras">TimelineMax</em> permet d'enchaîner différentes animations ensemble (v2.1.3 de GSAP)</li>
+                            <li><em class="gras">< script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></ script></em></li>
+                            <li><em class="gras">TweenMax</em> gère les animations</li>
+                            <li><em class="gras">< script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous">< /script></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
                             <li><em class="gras"></em></li>
