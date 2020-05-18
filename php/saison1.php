@@ -42,6 +42,8 @@
                             <li><em class="gras">filter: invert(1)</em> permet de créer un dark mode rapidement</li>
                             <li><em class="gras">html {font-size:}</em> permet de définir la taille qui servira de base pour notre unité rem</li>
                             <li>Pour mettre une couleur en dégardé dans du texte, on peut procéder ainsi: <em class="gras">p {background: linear-gradient(to left, color1, color 2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline;}</em></li>
+                            <li>L'attribut <em class="gras">tabIndex</em> permet de définir l'ordre de navigation au clavier sur la page, et donc aussi de permettre la navigation au clavier sur un éélment autre qu'un lien ou un bouton.</li>
+                            <li>Il faudra penser à ajouter un event listener <em class="gras">keypress</em> avec un if (event.key === 'Enter') {...} à la suite pour gérer le clic</li>
                         </ul>
 
                     <h3>Mise en page classique</h3>
